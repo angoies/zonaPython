@@ -74,17 +74,6 @@ edades =  [int(x) for x in edades]
 print("edades:", edades, "tipo:", type(edades))
 print("type(edades[0]):", type(edades[0]))
 
-# método map. ojo que no es una lista, hay que convertirla
-edades = ["14", "21", "17", "33", "45"]
-print("edades:", edades, "tipo:", type(edades))
-print("type(edades[0])", type(edades[0]))
-
-edades = map(int, edades) 
-print("edades:", edades, "tipo:", type(edades))
-edades = list(map(int, edades))
-
-print("edades:", edades, "tipo:", type(edades))
-print("type(edades[0])", type(edades[0]))
 
 
 
