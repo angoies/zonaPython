@@ -65,3 +65,20 @@ for x in nombre:
 # con índices
 for i in range(len(nombre)):
     print(f"{i}: {nombre[i]}")
+
+
+# Extraer parte del string: slice
+
+# La sintaxis del slicing en Python es string[inicio:fin:paso]:
+#   - inicio: Por defecto empieza desde el extremo del string.
+#   - fin: Por defecto recorre hasta el otro extremo.
+#   - paso: por defecto 1.
+
+saludo = "Hola Mundo"
+print(saludo[:4])  # "Hola"
+print(saludo[5:])  # "Mundo"
+print(saludo[::2]) # de dos en dos => "Hl ud"
+
+# Para invertir una cadena se usa salto negativo
+print(saludo[::-1]) # en order inverso => "odnuM aloH"
+ 
