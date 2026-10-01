@@ -46,6 +46,8 @@
       
     
     
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -631,7 +633,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../08_doc_linters/08_intro_python_doc/" class="md-nav__link">
+      <a href="../08_intro_python_linter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09_doc/09_intro_python_doc/" class="md-nav__link">
         
   
   
@@ -952,154 +982,18 @@
 <h1 id="introduccion-a-python">Introducción a Python</h1>
 <h2 id="selectivas">Selectivas</h2>
 <p><a href="https://www.w3schools.com/python/python_conditions.asp">https://www.w3schools.com/python/python_conditions.asp</a></p>
-<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">selectiva.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-0-10">10</a></span>
-<span class="normal"><a href="#__codelineno-0-11">11</a></span>
-<span class="normal"><a href="#__codelineno-0-12">12</a></span>
-<span class="normal"><a href="#__codelineno-0-13">13</a></span>
-<span class="normal"><a href="#__codelineno-0-14">14</a></span>
-<span class="normal"><a href="#__codelineno-0-15">15</a></span>
-<span class="normal"><a href="#__codelineno-0-16">16</a></span>
-<span class="normal"><a href="#__codelineno-0-17">17</a></span>
-<span class="normal"><a href="#__codelineno-0-18">18</a></span>
-<span class="normal"><a href="#__codelineno-0-19">19</a></span>
-<span class="normal"><a href="#__codelineno-0-20">20</a></span>
-<span class="normal"><a href="#__codelineno-0-21">21</a></span>
-<span class="normal"><a href="#__codelineno-0-22">22</a></span>
-<span class="normal"><a href="#__codelineno-0-23">23</a></span>
-<span class="normal"><a href="#__codelineno-0-24">24</a></span>
-<span class="normal"><a href="#__codelineno-0-25">25</a></span>
-<span class="normal"><a href="#__codelineno-0-26">26</a></span>
-<span class="normal"><a href="#__codelineno-0-27">27</a></span>
-<span class="normal"><a href="#__codelineno-0-28">28</a></span>
-<span class="normal"><a href="#__codelineno-0-29">29</a></span>
-<span class="normal"><a href="#__codelineno-0-30">30</a></span>
-<span class="normal"><a href="#__codelineno-0-31">31</a></span>
-<span class="normal"><a href="#__codelineno-0-32">32</a></span>
-<span class="normal"><a href="#__codelineno-0-33">33</a></span>
-<span class="normal"><a href="#__codelineno-0-34">34</a></span>
-<span class="normal"><a href="#__codelineno-0-35">35</a></span>
-<span class="normal"><a href="#__codelineno-0-36">36</a></span>
-<span class="normal"><a href="#__codelineno-0-37">37</a></span>
-<span class="normal"><a href="#__codelineno-0-38">38</a></span>
-<span class="normal"><a href="#__codelineno-0-39">39</a></span>
-<span class="normal"><a href="#__codelineno-0-40">40</a></span>
-<span class="normal"><a href="#__codelineno-0-41">41</a></span>
-<span class="normal"><a href="#__codelineno-0-42">42</a></span>
-<span class="normal"><a href="#__codelineno-0-43">43</a></span>
-<span class="normal"><a href="#__codelineno-0-44">44</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1">## Selectiva simple (y  probar indentación)</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="n">edad</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Edad: "</span><span class="p">))</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="nb">print</span><span class="p">(</span> <span class="nb">type</span><span class="p">(</span><span class="n">edad</span><span class="p">)</span> <span class="p">)</span> 
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="k">if</span>  <span class="n">edad</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>  <span class="c1"># selectiva simple</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Adulto"</span><span class="p">)</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"puede jugar"</span><span class="p">)</span> <span class="c1">## Error indentación</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"¡Hola Clase!"</span><span class="p">)</span>  <span class="c1"># siempre,fuera if</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="c1"># Ejemplo selectiva if-else y condición lógica con and</span>
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a>
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="n">saldo</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"saldo: "</span><span class="p">))</span>
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="n">edad</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"edad: "</span><span class="p">))</span>
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18"></a>
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="k">if</span> <span class="p">(</span><span class="n">edad</span> <span class="o">&gt;=</span> <span class="mi">18</span> <span class="ow">and</span> <span class="n">saldo</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">saldo</span> <span class="o">&gt;</span><span class="mi">100000</span><span class="p">):</span>
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Puede jugar"</span><span class="p">)</span>
-</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="k">else</span><span class="p">:</span>
-</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"no puede jugar"</span><span class="p">)</span>
-</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Fin selectiva"</span><span class="p">)</span>  <span class="c1"># siempre,fuera if</span>
-</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24"></a>
-</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25"></a>
-</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="c1"># Ejemplo selectiva anidadas</span>
-</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="n">a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"valor de a:"</span><span class="p">))</span>
-</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="n">b</span> <span class="o">=</span> <span class="mi">200</span>
-</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29"></a>
-</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30"></a><span class="k">if</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="n">a</span><span class="p">:</span>
-</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"b es mayor que a"</span><span class="p">)</span>
-</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32"></a><span class="k">else</span><span class="p">:</span> 
-</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33"></a>    <span class="k">if</span> <span class="n">b</span><span class="o">&lt;</span><span class="n">a</span><span class="p">:</span>
-</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"a es mayor que b"</span><span class="p">)</span>
-</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35"></a>    <span class="k">else</span><span class="p">:</span>
-</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"son iguales"</span><span class="p">)</span> 
-</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37"></a>
-</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38"></a><span class="c1"># lo mismo con elif (else if), más legible/compacto</span>
-</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39"></a><span class="k">if</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="n">a</span><span class="p">:</span>
-</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"b is greater than a"</span><span class="p">)</span>
-</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41"></a><span class="k">elif</span> <span class="n">b</span><span class="o">&lt;</span><span class="n">a</span><span class="p">:</span>
-</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"a es mayorr que b"</span><span class="p">)</span>
-</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43"></a><span class="k">else</span><span class="p">:</span>
-</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"son iguales"</span><span class="p">)</span> 
+<p><img alt="" src="../figuras/condicional-simple.png" /></p>
+<p><img alt="" src="../figuras/condicional-doble.png" /></p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">selectiva.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="o">-</span><span class="mi">8</span><span class="o">&lt;--</span> <span class="s2">"Bl.01/src/05_selectiva.py"</span>
 </span></code></pre></div></td></tr></table></div>
 <h2 id="bucles">Bucles</h2>
 <ul>
 <li><a href="https://www.w3schools.com/python/python_for_loops.asp">https://www.w3schools.com/python/python_for_loops.asp</a></li>
 <li><a href="https://www.w3schools.com/python/python_while_loops.asp">https://www.w3schools.com/python/python_while_loops.asp</a></li>
 </ul>
-<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">bucles.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-1-10">10</a></span>
-<span class="normal"><a href="#__codelineno-1-11">11</a></span>
-<span class="normal"><a href="#__codelineno-1-12">12</a></span>
-<span class="normal"><a href="#__codelineno-1-13">13</a></span>
-<span class="normal"><a href="#__codelineno-1-14">14</a></span>
-<span class="normal"><a href="#__codelineno-1-15">15</a></span>
-<span class="normal"><a href="#__codelineno-1-16">16</a></span>
-<span class="normal"><a href="#__codelineno-1-17">17</a></span>
-<span class="normal"><a href="#__codelineno-1-18">18</a></span>
-<span class="normal"><a href="#__codelineno-1-19">19</a></span>
-<span class="normal"><a href="#__codelineno-1-20">20</a></span>
-<span class="normal"><a href="#__codelineno-1-21">21</a></span>
-<span class="normal"><a href="#__codelineno-1-22">22</a></span>
-<span class="normal"><a href="#__codelineno-1-23">23</a></span>
-<span class="normal"><a href="#__codelineno-1-24">24</a></span>
-<span class="normal"><a href="#__codelineno-1-25">25</a></span>
-<span class="normal"><a href="#__codelineno-1-26">26</a></span>
-<span class="normal"><a href="#__codelineno-1-27">27</a></span>
-<span class="normal"><a href="#__codelineno-1-28">28</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1"># bucle for básico</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="c1"># con índices y uso range</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> "</span><span class="p">)</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> "</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">" "</span><span class="p">)</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">):</span>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> "</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">" "</span><span class="p">)</span>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12"></a>
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="c1"># Suma números</span>
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="n">suma</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># acamulador</span>
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="n">limite</span> <span class="o">=</span> <span class="mi">5</span>
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">limite</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17"></a>    <span class="n">suma</span> <span class="o">=</span> <span class="n">suma</span> <span class="o">+</span> <span class="n">i</span>
-</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Suma:"</span><span class="p">,</span> <span class="n">suma</span><span class="p">)</span>
-</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19"></a>
-</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="c1"># while</span>
-</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21"></a>
-</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22"></a><span class="n">numero</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Introduce un número (0 para terminar): "</span><span class="p">))</span>
-</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23"></a>
-</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24"></a><span class="k">while</span> <span class="n">numero</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Has introducido:"</span><span class="p">,</span> <span class="n">numero</span><span class="p">)</span>
-</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26"></a>    <span class="n">numero</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Introduce otro número (0 para terminar): "</span><span class="p">))</span>
-</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27"></a>
-</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Fin del programa"</span><span class="p">)</span>
+<p><img alt="" src="../figuras/bucle-for.png" />
+<img alt="" src="../figuras/bucle-while.png" /></p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">bucles.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="o">-</span><span class="mi">8</span><span class="o">&lt;--</span> <span class="s2">"Bl.01/src/06_bucles_01.py"</span>
 </span></code></pre></div></td></tr></table></div>
 <h2 id="selector-multiple">Selector multiple</h2>
 <p>Cuando se quieren por ejemplo evaluar las opciones de un menú, para evitar concatenar demasiados elif que terminan haciendo ilegible nuestro código, se  puede emplear la sentencia múltiple, que actúa sobre una variable normalmente numérica</p>
@@ -1119,6 +1013,7 @@
 </span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"por defecto"</span><span class="p">)</span>
 </span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"cuando no se le ha indicado ninguna de las opciones contempladas"</span><span class="p">)</span>
 </span></code></pre></div>
+<p><img alt="" src="../figuras/condicional-multiple.png" /></p>
 
 
 
