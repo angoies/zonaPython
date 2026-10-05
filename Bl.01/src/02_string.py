@@ -1,71 +1,60 @@
 
 # Ejemplo uso format en print
-ombre = "Alfredo Zumberg"
+nombre = "Alfredo Zumberg"
 edad = 23
 altura = 1.915
 print(nombre, "su edad es", edad, "y altura", altura)
-# con format
+# Uso de format con cadenas
 print(f"{nombre} su edad es {edad} y altura {altura:.1f}") 
 
 
 # Algunos métodos de string
 
 saludo = "Hola Mundo"
-print("saludo:", saludo)
+print("Valor de saludo:", saludo)
 
-print("saludo,lower():", saludo.lower())
-print("saludo:", saludo)
+print("Resultado de saludo.lower():", saludo.lower())
+print("Valor de saludo:", saludo)
+
+
 # No modifica cadena original. 
 # Si queremos modificar hace falta asignación
-
 saludo = saludo.lower()
-print("saludo:", saludo)
+print("Valor de saludo:", saludo)
 
 # Replace, lo mismo..
-print("saludo.replace():", saludo.replace("mundo", "universo"))
-print("saludo:", saludo)
+print('Resultado de saludo.replace("mundo", "universo"):' , saludo.replace("mundo", "universo"))
+print("Valor de saludo:", saludo)
 
-# str como array o lista, longitud o tamaño del str
+# el tipo str se puede tratar como array o lista:
 saludo ="¡Hola mundo!"
 print("Primer carácter:", saludo[0])
 print("Segundo carácter:",saludo[1])
 print("Longitud saludo:", len(saludo))
 
 # Buscar en un str: in y not in
-
 texto = "The best thiNgs  life are free!"
 busca = "FREE"
 
 if busca.lower() in texto.lower():
-    print("¡¡Sí está!!")
+    print(f"{busca} sí está en {texto}")
 else:
-    print("No está")
+    print(f"{busca} NO está en {texto}")
 
-# o en negativo
+# o en negativo y sin ser case sensitve
 if busca not in texto:
-    print("No está")
+    print(f"{busca} NO está en {texto}")
 else:
-    print("¡¡Sí está!!") 
-# Proponer: no case sensitive
+    print(f"{busca} sí está en {texto}")
 
  
 # Concatenar str
-
 nombre = "Raquel"
 apellidos = "García Ross"
-print(nombre + " " + apellidos) 
+print(nombre + " " + apellidos)  # el operador + con cadenas concatena
 
 nombreCompleto = apellidos + ", " + nombre
 print(nombreCompleto)
-
-# Recorrer str
-for x in nombre:
-    print(x)
-    
-# con índices
-for i in range(len(nombre)):
-    print(f"{i}: {nombre[i]}")
-
 
 # Extraer parte del string: slice
 
@@ -81,4 +70,9 @@ print(saludo[::2]) # de dos en dos => "Hl ud"
 
 # Para invertir una cadena se usa salto negativo
 print(saludo[::-1]) # en order inverso => "odnuM aloH"
+
+
+
+
+
  

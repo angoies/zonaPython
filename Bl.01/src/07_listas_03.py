@@ -8,21 +8,20 @@ edades.reverse()
 print("edades tras edades.reverse():", edades)
 
 
-# Modificar la lista
-
-## añadir al final
+# Modificar la lista: añadir al final
 print("edades:", edades)
 edades.append(20)
 print("edades tras edades.append(20):", edades)
 
-## añadir en cualquier posición: 
+# Modificar la lista: añadir en cualquier posición: 
 # The insert() method inserts an element to the list at the specified index.
 edades.insert(1, 44)
 print("edades tras edades.insert(1,44):", edades)
 
-# Borrar un elemento
+# # Modificar la lista: Borrar un elemento
 # The list pop() method removes the item at the specified index. The method also returns the removed item.
-eliminado = edades.pop() # Si no hay index extrae el último
+# Si no hay index extrae el último
+eliminado = edades.pop() 
 print("edades tras eliminado = edades.pop()", edades)
 print("eliminado:", eliminado )
 
@@ -37,7 +36,6 @@ print("edades tras clear", edades)
 
 
 ## CONVERTIR string en lista: split
-
 users = "ana:luis:alfredo"
 lista = users.split(":")
 print("users:", users)
@@ -48,30 +46,23 @@ print("type(lista)", type(lista))
 
 # Ejemplo lectura notas con input y conversión a lista para calcular media
 
-lectura = input("Notas separadas por el caracter ':'" )
+lectura = input("Notas separadas por el caracter ';': " )
 print(lectura, type(lectura)) # es un string
-notas = lectura.split(":") # es una lista
+notas = lectura.split(";") # es una lista
 print(notas, type(notas))
 
 suma = 0 # Almacena la suma de las notas
-media = 0
 for x in notas:
-    suma = suma + int(x)
+    suma = suma + float(x)
 media = suma/len(notas)
 print("Suma: ", suma)
 print(f"Media: {media:.2f}")
 
-
-# Avanzado: la conversión a enteros de una lista de string se puede 
-#  hacer con map o con compresión
-
-# comprensión de listas
+# Avanzado: conversión a números de una lista de string 
 edades = ["14", "21", "17", "33", "45"]
-print("edades:", edades, "tipo:", type(edades))
 print("type(edades[0]):", type(edades[0]))
-
+# comprensión de listas
 edades =  [int(x) for x in edades]
-print("edades:", edades, "tipo:", type(edades))
 print("type(edades[0]):", type(edades[0]))
 
 

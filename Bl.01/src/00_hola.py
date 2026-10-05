@@ -1,6 +1,7 @@
 # Para probar instalación Python
 # file: hola.py
-print("Hola Mundo")    # comentarios
+
+print("Hola Mundo")    # comentario al programa
  
 """ 
 Comentario 

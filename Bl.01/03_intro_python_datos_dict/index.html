@@ -1,0 +1,2093 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../03_intro_python_datos_listas/">
+      
+      
+        <link rel="next" href="../ejercicios/01_ejercicios/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Diccionarios - Zona Python</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduccion-a-python-diccionarios" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Zona Python" class="md-header__button md-logo" aria-label="Zona Python" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Zona Python
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Diccionarios
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Zona Python" class="md-nav__button md-logo" aria-label="Zona Python" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Zona Python
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bl. 01
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Bl. 01
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_intro_python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducción y tipos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Estructuras control
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Estructuras control
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_intro_python_estructuras_selectivas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Selectivas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_intro_python_estructuras_bucles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bucles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Estructuras Datos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Estructuras Datos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_intro_python_datos_listas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Listas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diccionarios
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diccionarios
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-codigo-completo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Código completo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-crear-un-diccionario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Crear un diccionario
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-mostrar-el-diccionario-completo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Mostrar el diccionario completo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-acceder-a-un-valor-mediante-su-clave" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Acceder a un valor mediante su clave
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-acceder-con-get" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Acceder con get()
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Acceder con get()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-diferencia-entre-y-get" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1. Diferencia entre [] y get()
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-recorrer-un-diccionario-con-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Recorrer un diccionario con for
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-modificar-un-valor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Modificar un valor
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-modificar-mediante-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Modificar mediante update()
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-anadir-una-nueva-clave" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Añadir una nueva clave
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-obtener-los-valores-con-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Obtener los valores con values()
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-obtener-las-claves-con-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Obtener las claves con keys()
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-las-vistas-keys-y-values-se-actualizan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Las vistas keys() y values() se actualizan
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-otra-forma-habitual-de-recorrer-un-diccionario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Otra forma habitual de recorrer un diccionario
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-enlaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Enlaces
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ejercicios
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ejercicios
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ejercicios/01_ejercicios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E01
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ejercicios/02_ejercicios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E02
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ejercicios/03_ejercicios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E03
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ejercicios/04_ejercicios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E04
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ejercicios/05_ejercicios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E05
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Módulos/funciones
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Módulos/funciones
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_intro_python_funciones_I/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Módulos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_intro_python_funciones_II/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Funciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06_intro_python_excepciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Excepciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07_intro_python_testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08_intro_python_linter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09_intro_python_doc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../src.zip" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fuentes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Utiles
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Utiles
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../utl/python-env.pdf" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entornos Virtuales
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../utl/intro_python_cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Argumentos en CLI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../utl/pyInstaller/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PyInstaller
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../utl/pip_y_pipx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pip/pipx
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-codigo-completo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Código completo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-crear-un-diccionario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Crear un diccionario
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-mostrar-el-diccionario-completo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Mostrar el diccionario completo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-acceder-a-un-valor-mediante-su-clave" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Acceder a un valor mediante su clave
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-acceder-con-get" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Acceder con get()
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Acceder con get()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-diferencia-entre-y-get" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1. Diferencia entre [] y get()
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-recorrer-un-diccionario-con-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Recorrer un diccionario con for
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-modificar-un-valor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Modificar un valor
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-modificar-mediante-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Modificar mediante update()
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-anadir-una-nueva-clave" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Añadir una nueva clave
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-obtener-los-valores-con-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Obtener los valores con values()
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-obtener-las-claves-con-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Obtener las claves con keys()
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-las-vistas-keys-y-values-se-actualizan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Las vistas keys() y values() se actualizan
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-otra-forma-habitual-de-recorrer-un-diccionario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Otra forma habitual de recorrer un diccionario
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-enlaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Enlaces
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Inicio
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../01_intro_python/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Bl. 01
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../03_intro_python_datos_listas/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Estructuras Datos
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="introduccion-a-python-diccionarios">Introducción a Python: Diccionarios</h1>
+<p>Los <strong>diccionarios</strong> son estructuras de datos que permiten almacenar información utilizando pares de <strong>clave y valor</strong>.</p>
+<p>Por ejemplo:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">coche</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="s2">"marca"</span><span class="p">:</span> <span class="s2">"Seat"</span><span class="p">,</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="s2">"modelo"</span><span class="p">:</span> <span class="s2">"Ateca"</span><span class="p">,</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="s2">"color"</span><span class="p">:</span> <span class="s2">"blanco"</span><span class="p">,</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="s2">"kilometros"</span><span class="p">:</span> <span class="mi">125000</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>En este diccionario:</p>
+<ul>
+<li><code>"marca"</code> es una clave y <code>"Seat"</code> es su valor;</li>
+<li><code>"modelo"</code> es una clave y <code>"Ateca"</code> es su valor;</li>
+<li><code>"color"</code> es una clave y <code>"blanco"</code> es su valor;</li>
+<li><code>"kilometros"</code> es una clave y <code>125000</code> es su valor.</li>
+</ul>
+<p>Los diccionarios resultan especialmente útiles cuando queremos agrupar varios datos relacionados y acceder a ellos mediante un nombre significativo.</p>
+<h2 id="1-codigo-completo">1. Código completo</h2>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">08_dict.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span>
+<span class="normal"><a href="#__codelineno-1-14">14</a></span>
+<span class="normal"><a href="#__codelineno-1-15">15</a></span>
+<span class="normal"><a href="#__codelineno-1-16">16</a></span>
+<span class="normal"><a href="#__codelineno-1-17">17</a></span>
+<span class="normal"><a href="#__codelineno-1-18">18</a></span>
+<span class="normal"><a href="#__codelineno-1-19">19</a></span>
+<span class="normal"><a href="#__codelineno-1-20">20</a></span>
+<span class="normal"><a href="#__codelineno-1-21">21</a></span>
+<span class="normal"><a href="#__codelineno-1-22">22</a></span>
+<span class="normal"><a href="#__codelineno-1-23">23</a></span>
+<span class="normal"><a href="#__codelineno-1-24">24</a></span>
+<span class="normal"><a href="#__codelineno-1-25">25</a></span>
+<span class="normal"><a href="#__codelineno-1-26">26</a></span>
+<span class="normal"><a href="#__codelineno-1-27">27</a></span>
+<span class="normal"><a href="#__codelineno-1-28">28</a></span>
+<span class="normal"><a href="#__codelineno-1-29">29</a></span>
+<span class="normal"><a href="#__codelineno-1-30">30</a></span>
+<span class="normal"><a href="#__codelineno-1-31">31</a></span>
+<span class="normal"><a href="#__codelineno-1-32">32</a></span>
+<span class="normal"><a href="#__codelineno-1-33">33</a></span>
+<span class="normal"><a href="#__codelineno-1-34">34</a></span>
+<span class="normal"><a href="#__codelineno-1-35">35</a></span>
+<span class="normal"><a href="#__codelineno-1-36">36</a></span>
+<span class="normal"><a href="#__codelineno-1-37">37</a></span>
+<span class="normal"><a href="#__codelineno-1-38">38</a></span>
+<span class="normal"><a href="#__codelineno-1-39">39</a></span>
+<span class="normal"><a href="#__codelineno-1-40">40</a></span>
+<span class="normal"><a href="#__codelineno-1-41">41</a></span>
+<span class="normal"><a href="#__codelineno-1-42">42</a></span>
+<span class="normal"><a href="#__codelineno-1-43">43</a></span>
+<span class="normal"><a href="#__codelineno-1-44">44</a></span>
+<span class="normal"><a href="#__codelineno-1-45">45</a></span>
+<span class="normal"><a href="#__codelineno-1-46">46</a></span>
+<span class="normal"><a href="#__codelineno-1-47">47</a></span>
+<span class="normal"><a href="#__codelineno-1-48">48</a></span>
+<span class="normal"><a href="#__codelineno-1-49">49</a></span>
+<span class="normal"><a href="#__codelineno-1-50">50</a></span>
+<span class="normal"><a href="#__codelineno-1-51">51</a></span>
+<span class="normal"><a href="#__codelineno-1-52">52</a></span>
+<span class="normal"><a href="#__codelineno-1-53">53</a></span>
+<span class="normal"><a href="#__codelineno-1-54">54</a></span>
+<span class="normal"><a href="#__codelineno-1-55">55</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1"># Dictionaries are used to store data values in key:value pairs.</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="c1"># A dictionary is a collection which is ordered*, changeable and do not allow duplicates.</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="n">coche</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a>    <span class="s2">"marca"</span><span class="p">:</span> <span class="s2">"Seat"</span><span class="p">,</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a>    <span class="s2">"modelo"</span><span class="p">:</span> <span class="s2">"Ateca"</span><span class="p">,</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a>    <span class="s2">"color"</span><span class="p">:</span> <span class="s2">"blanco"</span><span class="p">,</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a>    <span class="s2">"kilometros"</span><span class="p">:</span> <span class="mi">125000</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="p">}</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="c1"># muestra el diccionario completo</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"coche:"</span><span class="p">,</span> <span class="n">coche</span><span class="p">)</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13"></a>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="c1"># muestra un elemento con notación []</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="nb">print</span><span class="p">(</span><span class="s1">'coche["color"]:'</span><span class="p">,</span> <span class="n">coche</span><span class="p">[</span><span class="s2">"color"</span><span class="p">])</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="nb">print</span><span class="p">(</span><span class="s1">'coche["kilometros"]:'</span><span class="p">,</span> <span class="n">coche</span><span class="p">[</span><span class="s2">"kilometros"</span><span class="p">])</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="c1"># muestra un elemento con método get</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18"></a><span class="nb">print</span><span class="p">(</span><span class="s1">'coche.get("modelo"):'</span><span class="p">,</span> <span class="n">coche</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"modelo"</span><span class="p">))</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19"></a>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20"></a>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21"></a><span class="c1"># Recorro los valores del diccionario y sus claves</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Bucle for que recorre diccionario"</span><span class="p">)</span>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23"></a><span class="k">for</span> <span class="n">clave</span> <span class="ow">in</span> <span class="n">coche</span><span class="p">:</span>
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">" *"</span><span class="p">,</span> <span class="n">clave</span><span class="p">,</span> <span class="s2">"=&gt;"</span><span class="p">,</span> <span class="n">coche</span><span class="p">[</span><span class="n">clave</span><span class="p">])</span>
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25"></a>
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26"></a><span class="c1"># Otra forma: items()</span>
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27"></a><span class="c1"># `items()` permite obtener directamente la clave y el valor </span>
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28"></a><span class="c1">#  en cada iteración. Rn muchos casos resulta más cómodo y legible.</span>
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Bucle for que recorre diccionario con .items()"</span><span class="p">)</span>
+</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30"></a><span class="k">for</span> <span class="n">clave</span><span class="p">,</span> <span class="n">valor</span> <span class="ow">in</span> <span class="n">coche</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">" - "</span><span class="p">,</span> <span class="n">clave</span><span class="p">,</span> <span class="s2">"=&gt;"</span><span class="p">,</span> <span class="n">valor</span><span class="p">)</span>
+</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32"></a>
+</span><span id="__span-1-33"><a id="__codelineno-1-33" name="__codelineno-1-33"></a><span class="c1"># Modificar dicccionario </span>
+</span><span id="__span-1-34"><a id="__codelineno-1-34" name="__codelineno-1-34"></a><span class="c1"># con notación []</span>
+</span><span id="__span-1-35"><a id="__codelineno-1-35" name="__codelineno-1-35"></a><span class="n">coche</span><span class="p">[</span><span class="s2">"color"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"gris"</span>
+</span><span id="__span-1-36"><a id="__codelineno-1-36" name="__codelineno-1-36"></a><span class="c1"># con métoddo update</span>
+</span><span id="__span-1-37"><a id="__codelineno-1-37" name="__codelineno-1-37"></a><span class="n">coche</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">"kilometros"</span><span class="p">:</span> <span class="mi">99999</span><span class="p">})</span> 
+</span><span id="__span-1-38"><a id="__codelineno-1-38" name="__codelineno-1-38"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"coche tras modificaciones:"</span><span class="p">,</span> <span class="n">coche</span><span class="p">)</span>
+</span><span id="__span-1-39"><a id="__codelineno-1-39" name="__codelineno-1-39"></a>
+</span><span id="__span-1-40"><a id="__codelineno-1-40" name="__codelineno-1-40"></a><span class="c1"># Añadir nuevas claves</span>
+</span><span id="__span-1-41"><a id="__codelineno-1-41" name="__codelineno-1-41"></a><span class="n">coche</span><span class="p">[</span><span class="s2">"taller"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"Alterio reparaciones"</span>
+</span><span id="__span-1-42"><a id="__codelineno-1-42" name="__codelineno-1-42"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"coche tras añadir clave:"</span><span class="p">,</span> <span class="n">coche</span><span class="p">)</span>
+</span><span id="__span-1-43"><a id="__codelineno-1-43" name="__codelineno-1-43"></a>
+</span><span id="__span-1-44"><a id="__codelineno-1-44" name="__codelineno-1-44"></a><span class="c1"># uso de values() y keys() </span>
+</span><span id="__span-1-45"><a id="__codelineno-1-45" name="__codelineno-1-45"></a><span class="n">valores</span> <span class="o">=</span> <span class="n">coche</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+</span><span id="__span-1-46"><a id="__codelineno-1-46" name="__codelineno-1-46"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"valores:"</span><span class="p">,</span> <span class="n">valores</span><span class="p">)</span>
+</span><span id="__span-1-47"><a id="__codelineno-1-47" name="__codelineno-1-47"></a><span class="n">claves</span> <span class="o">=</span> <span class="n">coche</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</span><span id="__span-1-48"><a id="__codelineno-1-48" name="__codelineno-1-48"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"keys:"</span><span class="p">,</span> <span class="n">claves</span><span class="p">)</span>
+</span><span id="__span-1-49"><a id="__codelineno-1-49" name="__codelineno-1-49"></a>
+</span><span id="__span-1-50"><a id="__codelineno-1-50" name="__codelineno-1-50"></a><span class="c1"># las variables asignadas con values y keys()</span>
+</span><span id="__span-1-51"><a id="__codelineno-1-51" name="__codelineno-1-51"></a><span class="c1">#  se actualizan tras cambios en el diccionario</span>
+</span><span id="__span-1-52"><a id="__codelineno-1-52" name="__codelineno-1-52"></a><span class="nb">print</span><span class="p">(</span><span class="s1">'Se añade precio: coche["precio"] = 17000'</span><span class="p">)</span>
+</span><span id="__span-1-53"><a id="__codelineno-1-53" name="__codelineno-1-53"></a><span class="n">coche</span><span class="p">[</span><span class="s2">"precio"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">17000</span>
+</span><span id="__span-1-54"><a id="__codelineno-1-54" name="__codelineno-1-54"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"valores:"</span><span class="p">,</span> <span class="n">valores</span><span class="p">)</span>
+</span><span id="__span-1-55"><a id="__codelineno-1-55" name="__codelineno-1-55"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"keys:"</span><span class="p">,</span> <span class="n">claves</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<h2 id="2-crear-un-diccionario">2. Crear un diccionario</h2>
+<p>Un diccionario se escribe utilizando llaves:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">coche</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="s2">"marca"</span><span class="p">:</span> <span class="s2">"Seat"</span><span class="p">,</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="s2">"modelo"</span><span class="p">:</span> <span class="s2">"Ateca"</span><span class="p">,</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="s2">"color"</span><span class="p">:</span> <span class="s2">"blanco"</span><span class="p">,</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="s2">"kilometros"</span><span class="p">:</span> <span class="mi">125000</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Cada elemento tiene la forma:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>clave: valor
+</span></code></pre></div>
+<p>Por ejemplo:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="s2">"marca"</span><span class="p">:</span> <span class="s2">"Seat"</span>
+</span></code></pre></div>
+<p>La clave es:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>marca
+</span></code></pre></div>
+<p>y el valor asociado es:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Seat
+</span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Claves y valores</p>
+<p>En una lista accedemos a los elementos normalmente mediante su posición:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">lista</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span></code></pre></div>
+<p>En un diccionario utilizamos una <strong>clave</strong>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">coche</span><span class="p">[</span><span class="s2">"marca"</span><span class="p">]</span>
+</span></code></pre></div>
+</div>
+<p>Esto hace que el código pueda resultar más descriptivo.</p>
+<h2 id="3-mostrar-el-diccionario-completo">3. Mostrar el diccionario completo</h2>
+<p>Podemos mostrar todo el diccionario utilizando <code>print()</code>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"coche:"</span><span class="p">,</span> <span class="n">coche</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Obtendremos un resultado similar a:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>coche: {'marca': 'Seat', 'modelo': 'Ateca', 'color': 'blanco', 'kilometros': 125000}
+</span></code></pre></div>
+<h2 id="4-acceder-a-un-valor-mediante-su-clave">4. Acceder a un valor mediante su clave</h2>
+<p>Podemos utilizar corchetes:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">coche</span><span class="p">[</span><span class="s2">"color"</span><span class="p">]</span>
+</span></code></pre></div>
+<p>Por ejemplo:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">coche</span><span class="p">[</span><span class="s2">"color"</span><span class="p">])</span>
+</span></code></pre></div>
+<p>mostrará:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>blanco
+</span></code></pre></div>
+<p>También podemos consultar:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">coche</span><span class="p">[</span><span class="s2">"kilometros"</span><span class="p">]</span>
+</span></code></pre></div>
+<p>y obtendremos:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>125000
+</span></code></pre></div>
+<p>La clave nos permite indicar directamente qué dato queremos consultar.</p>
+<h2 id="5-acceder-con-get">5. Acceder con <code>get()</code></h2>
+<p>Otra posibilidad es utilizar el método:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">get</span><span class="p">()</span>
+</span></code></pre></div>
+<p>Por ejemplo:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">coche</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"modelo"</span><span class="p">)</span>
+</span></code></pre></div>
+<p>devuelve:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>Ateca
+</span></code></pre></div>
+<p>Por tanto:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">coche</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"modelo"</span><span class="p">))</span>
+</span></code></pre></div>
+<p>es otra forma de consultar un valor.</p>
+<h3 id="51-diferencia-entre-y-get">5.1. Diferencia entre <code>[]</code> y <code>get()</code></h3>
+<p>Mientras la clave exista, estas dos expresiones devuelven el mismo resultado:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">coche</span><span class="p">[</span><span class="s2">"modelo"</span><span class="p">]</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">coche</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"modelo"</span><span class="p">)</span>
+</span></code></pre></div>
+<p>La diferencia aparece cuando la clave <strong>no existe</strong>.</p>
+<p>Si intentamos:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="n">coche</span><span class="p">[</span><span class="s2">"precio"</span><span class="p">]</span>
+</span></code></pre></div>
+<p>antes de haber creado esa clave, Python genera:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>KeyError
+</span></code></pre></div>
+<p>Sin embargo:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="n">coche</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"precio"</span><span class="p">)</span>
+</span></code></pre></div>
+<p>devuelve por defecto:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="kc">None</span>
+</span></code></pre></div>
+<p>sin detener el programa.</p>
+<div class="admonition tip">
+<p class="admonition-title"><code>get()</code> permite indicar un valor por defecto</p>
+<p>Podemos escribir:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="n">coche</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"precio"</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Si <code>"precio"</code> no existe, obtendremos <code>0</code>.</p>
+</div>
+<h2 id="6-recorrer-un-diccionario-con-for">6. Recorrer un diccionario con <code>for</code></h2>
+<p>El ejemplo utiliza:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">coche</span><span class="p">:</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">" *"</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s2">"=&gt;"</span><span class="p">,</span> <span class="n">coche</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
+</span></code></pre></div>
+<p>Cuando recorremos directamente un diccionario:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">coche</span><span class="p">:</span>
+</span></code></pre></div>
+<p>la variable <code>x</code> va tomando las <strong>claves</strong> del diccionario.</p>
+<p>Por ejemplo:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>marca
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>modelo
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>color
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>kilometros
+</span></code></pre></div>
+<p>Podemos utilizar la clave para consultar su valor:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="n">coche</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
+</span></code></pre></div>
+<p>De esta forma podemos mostrar ambos:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>marca =&gt; Seat
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>modelo =&gt; Ateca
+</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>color =&gt; blanco
+</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a>kilometros =&gt; 125000
+</span></code></pre></div>
+<h2 id="7-modificar-un-valor">7. Modificar un valor</h2>
+<p>Los diccionarios son <strong>mutables</strong>, por lo que podemos cambiar sus valores.</p>
+<p>Por ejemplo:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="n">coche</span><span class="p">[</span><span class="s2">"color"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"gris"</span>
+</span></code></pre></div>
+<p>La clave <code>"color"</code> ya existe, por lo que su valor pasa de:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>blanco
+</span></code></pre></div>
+<p>a:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>gris
+</span></code></pre></div>
+<h2 id="8-modificar-mediante-update">8. Modificar mediante <code>update()</code></h2>
+<p>También podemos utilizar:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="n">coche</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">"kilometros"</span><span class="p">:</span> <span class="mi">99999</span><span class="p">})</span>
+</span></code></pre></div>
+<p>El método <code>update()</code> recibe otro diccionario con los datos que queremos actualizar.</p>
+<p>Después de ejecutar esa instrucción, el valor asociado a <code>"kilometros"</code> será:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>99999
+</span></code></pre></div>
+<p>Para modificar un único elemento, tanto:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="n">coche</span><span class="p">[</span><span class="s2">"kilometros"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">99999</span>
+</span></code></pre></div>
+<p>como:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="n">coche</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">"kilometros"</span><span class="p">:</span> <span class="mi">99999</span><span class="p">})</span>
+</span></code></pre></div>
+<p>son posibles.</p>
+<h2 id="9-anadir-una-nueva-clave">9. Añadir una nueva clave</h2>
+<p>La misma sintaxis que utilizamos para modificar puede servir para crear un elemento nuevo:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="n">coche</span><span class="p">[</span><span class="s2">"taller"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"Alterio reparaciones"</span>
+</span></code></pre></div>
+<p>Como la clave <code>"taller"</code> no existía, Python la añade al diccionario.</p>
+<p>Ahora tendremos también:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>taller =&gt; Alterio reparaciones
+</span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Modificar o añadir</p>
+<p>Esta instrucción:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="n">diccionario</span><span class="p">[</span><span class="n">clave</span><span class="p">]</span> <span class="o">=</span> <span class="n">valor</span>
+</span></code></pre></div>
+<p>hace dos cosas posibles:</p>
+<ul>
+<li>si la clave ya existe, modifica su valor;</li>
+<li>si no existe, crea una nueva entrada.</li>
+</ul>
+</div>
+<h2 id="10-obtener-los-valores-con-values">10. Obtener los valores con <code>values()</code></h2>
+<p>El método:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="n">coche</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+</span></code></pre></div>
+<p>permite obtener una vista de todos los valores del diccionario.</p>
+<p>En el ejemplo:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="n">valores</span> <span class="o">=</span> <span class="n">coche</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+</span><span id="__span-43-2"><a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"valores:"</span><span class="p">,</span> <span class="n">valores</span><span class="p">)</span>
+</span></code></pre></div>
+<p>aparecerán los valores correspondientes a elementos como:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>Seat
+</span><span id="__span-44-2"><a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a>Ateca
+</span><span id="__span-44-3"><a id="__codelineno-44-3" name="__codelineno-44-3" href="#__codelineno-44-3"></a>gris
+</span><span id="__span-44-4"><a id="__codelineno-44-4" name="__codelineno-44-4" href="#__codelineno-44-4"></a>99999
+</span><span id="__span-44-5"><a id="__codelineno-44-5" name="__codelineno-44-5" href="#__codelineno-44-5"></a>Alterio reparaciones
+</span></code></pre></div>
+<h2 id="11-obtener-las-claves-con-keys">11. Obtener las claves con <code>keys()</code></h2>
+<p>El método:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="n">coche</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</span></code></pre></div>
+<p>permite obtener las claves.</p>
+<p>Por ejemplo:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="n">keys</span> <span class="o">=</span> <span class="n">coche</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</span><span id="__span-46-2"><a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"keys:"</span><span class="p">,</span> <span class="n">keys</span><span class="p">)</span>
+</span></code></pre></div>
+<p>incluirá claves como:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>marca
+</span><span id="__span-47-2"><a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a>modelo
+</span><span id="__span-47-3"><a id="__codelineno-47-3" name="__codelineno-47-3" href="#__codelineno-47-3"></a>color
+</span><span id="__span-47-4"><a id="__codelineno-47-4" name="__codelineno-47-4" href="#__codelineno-47-4"></a>kilometros
+</span><span id="__span-47-5"><a id="__codelineno-47-5" name="__codelineno-47-5" href="#__codelineno-47-5"></a>taller
+</span></code></pre></div>
+<h2 id="12-las-vistas-keys-y-values-se-actualizan">12. Las vistas <code>keys()</code> y <code>values()</code> se actualizan</h2>
+<p>El ejemplo guarda:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a><span class="n">valores</span> <span class="o">=</span> <span class="n">coche</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+</span><span id="__span-48-2"><a id="__codelineno-48-2" name="__codelineno-48-2" href="#__codelineno-48-2"></a><span class="n">keys</span> <span class="o">=</span> <span class="n">coche</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</span></code></pre></div>
+<p>Después añade:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a><span class="n">coche</span><span class="p">[</span><span class="s2">"precio"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">17000</span>
+</span></code></pre></div>
+<p>Y vuelve a mostrar:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"valores:"</span><span class="p">,</span> <span class="n">valores</span><span class="p">)</span>
+</span><span id="__span-50-2"><a id="__codelineno-50-2" name="__codelineno-50-2" href="#__codelineno-50-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"keys:"</span><span class="p">,</span> <span class="n">keys</span><span class="p">)</span>
+</span></code></pre></div>
+<p>La nueva clave y el nuevo valor también aparecen.</p>
+<p>Esto sucede porque <code>keys()</code> y <code>values()</code> devuelven <strong>vistas del diccionario</strong>, no copias independientes.</p>
+<div class="admonition note">
+<p class="admonition-title">Una vista refleja los cambios</p>
+<p>Si el diccionario cambia, las vistas obtenidas con:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-51-1"><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a><span class="n">keys</span><span class="p">()</span>
+</span><span id="__span-51-2"><a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a><span class="n">values</span><span class="p">()</span>
+</span></code></pre></div>
+<p>reflejan esos cambios.</p>
+</div>
+<h2 id="13-otra-forma-habitual-de-recorrer-un-diccionario">13. Otra forma habitual de recorrer un diccionario</h2>
+<p>Además de:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-52-1"><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a><span class="k">for</span> <span class="n">clave</span> <span class="ow">in</span> <span class="n">coche</span><span class="p">:</span>
+</span><span id="__span-52-2"><a id="__codelineno-52-2" name="__codelineno-52-2" href="#__codelineno-52-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">clave</span><span class="p">,</span> <span class="n">coche</span><span class="p">[</span><span class="n">clave</span><span class="p">])</span>
+</span></code></pre></div>
+<p>existe el método <code>items()</code>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-53-1"><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a><span class="k">for</span> <span class="n">clave</span><span class="p">,</span> <span class="n">valor</span> <span class="ow">in</span> <span class="n">coche</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span><span id="__span-53-2"><a id="__codelineno-53-2" name="__codelineno-53-2" href="#__codelineno-53-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">clave</span><span class="p">,</span> <span class="s2">"=&gt;"</span><span class="p">,</span> <span class="n">valor</span><span class="p">)</span>
+</span></code></pre></div>
+<p><code>items()</code> permite obtener directamente la clave y el valor en cada iteración. Para muchos casos resulta especialmente cómodo y legible.</p>
+<h2 id="14-enlaces">14. Enlaces</h2>
+<p><a href="https://www.w3schools.com/python/python_dictionaries.asp">https://www.w3schools.com/python/python_dictionaries.asp</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../03_intro_python_datos_listas/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Listas">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Listas
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../ejercicios/01_ejercicios/" class="md-footer__link md-footer__link--next" aria-label="Next: E01">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                E01
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["search.highlight", "navigation.tracking", "navigation.tabs.sticky", "navigation.path", "navigation.footer", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
