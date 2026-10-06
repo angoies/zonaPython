@@ -11,33 +11,34 @@ coche = {
 # muestra el diccionario completo
 print("coche:", coche)
 
-# muestra un elemento con notación []
+# Mostar el valor de una clave: 2 posibilidades
+# a) muestra un elemento con notación []
 print('coche["color"]:', coche["color"])
 print('coche["kilometros"]:', coche["kilometros"])
-# muestra un elemento con método get
+# b) muestra un elemento con método get
 print('coche.get("modelo"):', coche.get("modelo"))
 
 
-# Recorro los valores del diccionario y sus claves
+# Recorrer los valores del diccionario y sus claves
 print("Bucle for que recorre diccionario")
 for clave in coche:
     print(" *", clave, "=>", coche[clave])
 
-# Otra forma: items()
+# Otra forma de recorrer: items()
 # `items()` permite obtener directamente la clave y el valor 
 #  en cada iteración. Rn muchos casos resulta más cómodo y legible.
 print("Bucle for que recorre diccionario con .items()")
 for clave, valor in coche.items():
     print(" - ", clave, "=>", valor)
 
-# Modificar dicccionario 
-# con notación []
+# Modificar dicccionario: dos posibilidades
+# a) con notación []
 coche["color"] = "gris"
-# con métoddo update
+# b) con métoddo update
 coche.update({"kilometros": 99999}) 
 print("coche tras modificaciones:", coche)
 
-# Añadir nuevas claves
+# Añadir nueva clave a un diccionario
 coche["taller"] = "Alterio reparaciones"
 print("coche tras añadir clave:", coche)
 

@@ -540,7 +540,7 @@
   <span class="md-ellipsis">
     
   
-    Ejercicios
+    Ejercicios I
   
 
     
@@ -556,7 +556,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Ejercicios
+    Ejercicios I
   
 
           </label>
@@ -872,6 +872,145 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ejercicios II
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ejercicios II
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ejercicios/06_ejercicios_funciones_I/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E06
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ejercicios/07_ejercicios_funciones_II/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E07
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ejercicios/08_ejercicios_excepciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E08
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1270,6 +1409,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../10_intro_python_debug/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Depuración
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../src.zip" class="md-nav__link">
         
   
@@ -1444,6 +1611,34 @@
     
   
     pip/pipx
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../utl/11_python_logging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Logging
   
 
     
@@ -2164,6 +2359,47 @@
 <li>se utiliza en muchos proyectos;</li>
 <li>no necesita paquetes adicionales.</li>
 </ul>
+<p>Tenga en cuenta que con <code>unittest</code> + <code>subTest()</code> el resultado suele ser **menos detallado que con `pytest.mark.</p>
+<blockquote>
+<p><code>subTest()</code> permite ejecutar varios casos dentro de un mismo método de <code>unittest</code> y saber cuál ha fallado, pero <code>pytest.mark.parametrize</code> convierte cada conjunto de datos en un caso de prueba independiente y ofrece una salida más detallada.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><code>unittest</code> + <code>subTest()</code></th>
+<th><code>pytest.mark.parametrize</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dataset con 3 casos</td>
+<td>1 test + 3 subtests</td>
+<td>3 tests</td>
+</tr>
+<tr>
+<td>Si uno falla</td>
+<td>Continúa con los demás</td>
+<td>Continúa con los demás</td>
+</tr>
+<tr>
+<td>Identifica el caso que falla</td>
+<td>Sí</td>
+<td>Sí</td>
+</tr>
+<tr>
+<td>Muestra los casos correctos individualmente</td>
+<td>Normalmente no</td>
+<td>Sí con <code>-v</code></td>
+</tr>
+<tr>
+<td>Salida fácil de interpretar</td>
+<td>Menos</td>
+<td>Más</td>
+</tr>
+</tbody>
+</table>
+<p>En ese sentido <strong>esta es una de las ventajas de <code>pytest</code></strong>: al trabajar con datasets, se ve más claramente qué casos pasan y cuáles fallan.</p>
 <!-- ## 10. Soluciones orientativas
 
 ### 10.1. Ejercicio 2

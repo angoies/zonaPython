@@ -12,7 +12,7 @@
         <link rel="prev" href="../05_intro_python_funciones_II/">
       
       
-        <link rel="next" href="../07_intro_python_linter/">
+        <link rel="next" href="../ejercicios/06_ejercicios_funciones_I/">
       
       
         
@@ -540,7 +540,7 @@
   <span class="md-ellipsis">
     
   
-    Ejercicios
+    Ejercicios I
   
 
     
@@ -556,7 +556,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Ejercicios
+    Ejercicios I
   
 
           </label>
@@ -865,6 +865,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Excepciones
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -881,6 +899,419 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Introducción
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-que-es-una-excepcion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. ¿Qué es una excepción?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-excepciones-con-osmkdir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Excepciones con os.mkdir()
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-la-estructura-try-except" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. La estructura try ... except
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-tratar-varias-excepciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Tratar varias excepciones
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-obtener-informacion-sobre-la-excepcion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Obtener información sobre la excepción
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-captura-generica-con-exception" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Captura genérica con Exception
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-ejemplos-excepciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Ejemplos excepciones
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Ejemplos excepciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-input-y-valueerror" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1. input() y ValueError
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-division-por-cero" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2. división por cero
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-anexo-i-else-y-finally" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Anexo I: else y finally
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Anexo I: else y finally">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-else" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1. else
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-finally" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2. finally
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-estructura-completa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3. Estructura completa
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-ejemplo-completo-con-directorios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Ejemplo completo con directorios
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-anexo-ii-excepciones-habituales-en-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Anexo II: Excepciones habituales en Python
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Anexo II: Excepciones habituales en Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-indexerror-con-listas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1. IndexError con listas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-keyerror-con-diccionarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2. KeyError con diccionarios
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-anexo-iii-recomendaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Anexo III: Recomendaciones
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. Anexo III: Recomendaciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121-evitar-bloques-try-demasiado-grandes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.1. Evitar bloques try demasiado grandes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122-evitar-except-sin-indicar-excepcion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.2. Evitar except: sin indicar excepción
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ejercicios II
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ejercicios II
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ejercicios/06_ejercicios_funciones_I/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E06
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ejercicios/07_ejercicios_funciones_II/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E07
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ejercicios/08_ejercicios_excepciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E08
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -958,6 +1389,34 @@
     
   
     Documentación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10_intro_python_debug/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Depuración
   
 
     
@@ -1165,6 +1624,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../utl/11_python_logging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Logging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1191,6 +1678,269 @@
   
     
   
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Introducción
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-que-es-una-excepcion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. ¿Qué es una excepción?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-excepciones-con-osmkdir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Excepciones con os.mkdir()
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-la-estructura-try-except" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. La estructura try ... except
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-tratar-varias-excepciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Tratar varias excepciones
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-obtener-informacion-sobre-la-excepcion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Obtener información sobre la excepción
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-captura-generica-con-exception" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Captura genérica con Exception
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-ejemplos-excepciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Ejemplos excepciones
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Ejemplos excepciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-input-y-valueerror" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1. input() y ValueError
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-division-por-cero" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2. división por cero
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-anexo-i-else-y-finally" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Anexo I: else y finally
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Anexo I: else y finally">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-else" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1. else
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-finally" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2. finally
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-estructura-completa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3. Estructura completa
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-ejemplo-completo-con-directorios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Ejemplo completo con directorios
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-anexo-ii-excepciones-habituales-en-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Anexo II: Excepciones habituales en Python
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Anexo II: Excepciones habituales en Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-indexerror-con-listas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1. IndexError con listas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-keyerror-con-diccionarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2. KeyError con diccionarios
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-anexo-iii-recomendaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Anexo III: Recomendaciones
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. Anexo III: Recomendaciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121-evitar-bloques-try-demasiado-grandes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.1. Evitar bloques try demasiado grandes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122-evitar-except-sin-indicar-excepcion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.2. Evitar except: sin indicar excepción
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1256,112 +2006,305 @@
 
 
 <h1 id="introduccion-a-python-excepciones">Introducción a Python - Excepciones</h1>
-<p>Ya se adelantó el posible problema del tratamiento de excepciones con el uso de <code>os.mkdir()</code></p>
-<blockquote>
-<p>: Si la carpeta ya existe o no se tienen permisos de escritura en la ruta destino, Python interrumpirá el script con una excepción. A diferencia de los scripts de Bash o las llamadas en C (donde las funciones devuelven un código de salida como 0 o 1), os.mkdir() gestiona los resultados mediante el flujo de excepciones:</p>
-<ul>
-<li>Si la carpeta se crea correctamente: La función finaliza en silencio devolviendo None.</li>
-<li>Si ocurre un error: No devuelve un código de error, sino que interrumpe la ejecución lanzando una excepción:<ul>
-<li>FileExistsError: La carpeta ya existe en esa ruta.</li>
-<li>PermissionError: El usuario que ejecuta el script no tiene permisos de escritura.</li>
-<li>FileNotFoundError: La ruta intermedia especificada no existe (por ejemplo, intentar crear a/b/c cuando a o b no existen).</li>
-</ul>
-</li>
-</ul>
-</blockquote>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Invocación de la función en directorio sin permisos</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s2">"/root/nueva_carpeta"</span><span class="p">)</span>
+<h2 id="1-introduccion">1. Introducción</h2>
+<p>Cuando un programa encuentra un problema durante su ejecución, Python puede generar una <strong>excepción</strong>. Ya vimos un ejemplo al utilizar <code>os.mkdir()</code>
+para crear directorios. Por ejemplo:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s2">"/root/nueva_carpeta"</span><span class="p">)</span>
 </span></code></pre></div>
-<p>Y el resultado:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>clases@ssd:~/src$ python3 13_excepciones.py 
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Traceback (most recent call last):
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>  File "src/13_excepciones.py", line 25, in &lt;module&gt;
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    os.mkdir("/root/nueva_carpeta")
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>PermissionError: [Errno 13] Permission denied: '/root/nueva_carpeta'
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>clases@ssd:~/src$
-</span></code></pre></div></p>
-<p>La solución es usar la estrcutura <code>try .. except</code>. Observe en este ejmplo como:</p>
+<p>Si el usuario que ejecuta el programa no tiene permisos para crear el directorio, Python interrumpe la ejecución y genera una excepción. Una posible salida sería:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Traceback (most recent call last):
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>  File "13_excepciones.py", line 25, in &lt;module&gt;
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    os.mkdir("/root/nueva_carpeta")
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>PermissionError: [Errno 13] Permission denied: '/root/nueva_carpeta'
+</span></code></pre></div>
+<p>En este caso, la excepción es:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>PermissionError
+</span></code></pre></div>
+<h2 id="2-que-es-una-excepcion">2. ¿Qué es una excepción?</h2>
+<p>Una excepción representa una situación anómala que ocurre mientras el programa se está ejecutando. Algunos ejemplos habituales son:</p>
 <ul>
-<li>tras el bloque <code>try</code> cada cada excepción que quiera tratar tiene su bloque <code>except</code></li>
-<li>hay un <code>except Exception</code> final que funciona como caso por defecto y muestra la información generada con <code>{e}</code></li>
+<li>intentar convertir a número un texto que no contiene un número;</li>
+<li>dividir entre cero;</li>
+<li>acceder a una posición que no existe en una lista;</li>
+<li>buscar una clave inexistente en un diccionario;</li>
+<li>abrir un fichero que no existe;</li>
+<li>crear un directorio sin permisos suficientes.</li>
 </ul>
-<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">07_listas_02.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-2-10">10</a></span>
-<span class="normal"><a href="#__codelineno-2-11">11</a></span>
-<span class="normal"><a href="#__codelineno-2-12">12</a></span>
-<span class="normal"><a href="#__codelineno-2-13">13</a></span>
-<span class="normal"><a href="#__codelineno-2-14">14</a></span>
-<span class="normal"><a href="#__codelineno-2-15">15</a></span>
-<span class="normal"><a href="#__codelineno-2-16">16</a></span>
-<span class="normal"><a href="#__codelineno-2-17">17</a></span>
-<span class="normal"><a href="#__codelineno-2-18">18</a></span>
-<span class="normal"><a href="#__codelineno-2-19">19</a></span>
-<span class="normal"><a href="#__codelineno-2-20">20</a></span>
-<span class="normal"><a href="#__codelineno-2-21">21</a></span>
-<span class="normal"><a href="#__codelineno-2-22">22</a></span>
-<span class="normal"><a href="#__codelineno-2-23">23</a></span>
-<span class="normal"><a href="#__codelineno-2-24">24</a></span>
-<span class="normal"><a href="#__codelineno-2-25">25</a></span>
-<span class="normal"><a href="#__codelineno-2-26">26</a></span>
-<span class="normal"><a href="#__codelineno-2-27">27</a></span>
-<span class="normal"><a href="#__codelineno-2-28">28</a></span>
-<span class="normal"><a href="#__codelineno-2-29">29</a></span>
-<span class="normal"><a href="#__codelineno-2-30">30</a></span>
-<span class="normal"><a href="#__codelineno-2-31">31</a></span>
-<span class="normal"><a href="#__codelineno-2-32">32</a></span>
-<span class="normal"><a href="#__codelineno-2-33">33</a></span>
-<span class="normal"><a href="#__codelineno-2-34">34</a></span>
-<span class="normal"><a href="#__codelineno-2-35">35</a></span>
-<span class="normal"><a href="#__codelineno-2-36">36</a></span>
-<span class="normal"><a href="#__codelineno-2-37">37</a></span>
-<span class="normal"><a href="#__codelineno-2-38">38</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">crear_directorio_backup</span><span class="p">(</span><span class="n">ruta</span><span class="p">):</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a>    <span class="k">try</span><span class="p">:</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a>        <span class="c1"># Invocación de la función con la ruta requerida</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a>        <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">ruta</span><span class="p">)</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"El directorio '</span><span class="si">{</span><span class="n">ruta</span><span class="si">}</span><span class="s2">' ha sido creado correctamente."</span><span class="p">)</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a>    <span class="k">except</span> <span class="ne">FileExistsError</span><span class="p">:</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"[Warning] El directorio '</span><span class="si">{</span><span class="n">ruta</span><span class="si">}</span><span class="s2">' ya existe. No se realizó ninguna acción."</span><span class="p">)</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12"></a>    <span class="k">except</span> <span class="ne">PermissionError</span><span class="p">:</span>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"[Error] Permisos insuficientes para crear '</span><span class="si">{</span><span class="n">ruta</span><span class="si">}</span><span class="s2">'. "</span><span class="p">)</span>
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14"></a>
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15"></a>    <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
-</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"[Error] La ruta base especificada en '</span><span class="si">{</span><span class="n">ruta</span><span class="si">}</span><span class="s2">' no existe."</span><span class="p">)</span>
-</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17"></a>
-</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18"></a>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>  <span class="c1"># Actua como default, y {e} muestra el error</span>
-</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"[Otros] Error inesperado al intentar crear la carpeta: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20"></a>        <span class="c1"># print(f"Tipo de excepción real: {type(e).__name__}")  # nombre exacto de la excepción</span>
-</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21"></a>
-</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22"></a><span class="c1"># --- Pruebas de ejecución ---</span>
-</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23"></a>
-</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24"></a>
-</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25"></a><span class="c1"># # Invocación de la función en directorio sin permisos</span>
-</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26"></a><span class="c1"># os.mkdir("/root/nueva_carpeta")</span>
-</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27"></a>
-</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28"></a><span class="c1"># 1. Creación normal</span>
-</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29"></a><span class="n">crear_directorio_backup</span><span class="p">(</span><span class="s2">"/tmp/mis_backups"</span><span class="p">)</span>
-</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30"></a>
-</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31"></a><span class="c1"># 2. Ya creado en paso 1, capturará el FileExistsError</span>
-</span><span id="__span-2-32"><a id="__codelineno-2-32" name="__codelineno-2-32"></a><span class="n">crear_directorio_backup</span><span class="p">(</span><span class="s2">"/tmp/mis_backups"</span><span class="p">)</span>
-</span><span id="__span-2-33"><a id="__codelineno-2-33" name="__codelineno-2-33"></a>
-</span><span id="__span-2-34"><a id="__codelineno-2-34" name="__codelineno-2-34"></a><span class="c1"># 3. Intentar crear en  directorio restringido </span>
-</span><span id="__span-2-35"><a id="__codelineno-2-35" name="__codelineno-2-35"></a><span class="n">crear_directorio_backup</span><span class="p">(</span><span class="s2">"/root/nueva_carpeta"</span><span class="p">)</span>
-</span><span id="__span-2-36"><a id="__codelineno-2-36" name="__codelineno-2-36"></a>
-</span><span id="__span-2-37"><a id="__codelineno-2-37" name="__codelineno-2-37"></a><span class="c1"># 4. Intentar crear en una ruta que no existe</span>
-</span><span id="__span-2-38"><a id="__codelineno-2-38" name="__codelineno-2-38"></a><span class="n">crear_directorio_backup</span><span class="p">(</span><span class="s2">"/tmp/docs/nueva_carpeta"</span><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
+<p>Si no tratamos la excepción, el programa normalmente se detiene y Python muestra un <strong>traceback</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Excepción no significa necesariamente error de programación</p>
+<p>Una excepción también puede representar situaciones perfectamente posibles durante la ejecución.</p>
+<p>Por ejemplo, que un usuario escriba un dato incorrecto o que un fichero no exista.</p>
+</div>
+<h2 id="3-excepciones-con-osmkdir">3. Excepciones con <code>os.mkdir()</code></h2>
+<p>La función <code>os.mkdir(ruta)</code> no devuelve un código de error cuando algo falla. Si el directorio se crea correctamente, la función termina y devuelve:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kc">None</span>
+</span></code></pre></div>
+<p>Si se produce un problema, genera una excepción. Algunas excepciones habituales son:</p>
+<ul>
+<li><code>FileExistsError</code>: Se produce si el directorio ya existe.</li>
+<li><code>PermissionError</code>: Se produce si no tenemos permisos suficientes.</li>
+<li><code>FileNotFoundError</code>: Puede aparecer si algún directorio intermedio no existe.</li>
+</ul>
+<h2 id="4-la-estructura-try-except">4. La estructura <code>try ... except</code></h2>
+<p>Para evitar que el programa se detenga automáticamente podemos <strong>capturar</strong> la excepción.La estructura básica es:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">try</span><span class="p">:</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="c1"># código que puede generar una excepción</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">except</span> <span class="n">TipoDeExcepcion</span><span class="p">:</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="c1"># qué hacer si ocurre</span>
+</span></code></pre></div>
+<p>Por ejemplo:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="k">try</span><span class="p">:</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s2">"/root/nueva_carpeta"</span><span class="p">)</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="k">except</span> <span class="ne">PermissionError</span><span class="p">:</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"No tiene permisos para crear el directorio"</span><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="5-tratar-varias-excepciones">5. Tratar varias excepciones</h2>
+<p>Podemos utilizar varios bloques <code>except</code>.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">ruta</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Directorio a crear: "</span><span class="p">)</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="k">try</span><span class="p">:</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">ruta</span><span class="p">)</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="k">except</span> <span class="ne">FileExistsError</span><span class="p">:</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"El directorio ya existe"</span><span class="p">)</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="k">except</span> <span class="ne">PermissionError</span><span class="p">:</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"No tiene permisos para crear el directorio"</span><span class="p">)</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Algún directorio intermedio no existe"</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Cada <code>except</code> trata un tipo de excepción diferente.</p>
+<h2 id="6-obtener-informacion-sobre-la-excepcion">6. Obtener información sobre la excepción</h2>
+<p>Podemos guardar el objeto de la excepción en una variable. Vea un ejemplo:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">try</span><span class="p">:</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s2">"/root/nueva_carpeta"</span><span class="p">)</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="k">except</span> <span class="ne">PermissionError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Error de permisos"</span><span class="p">)</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Detalle:"</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+</span></code></pre></div>
+<p>La variable <code>e</code> contiene información generada por Python sobre la excepción.</p>
+<h2 id="7-captura-generica-con-exception">7. Captura genérica con <code>Exception</code></h2>
+<p>También podemos capturar la excepción sin especificar el tipo usando <code>Exception</code>. Sería similar a un "caso por defecto";</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">try</span><span class="p">:</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">ruta</span><span class="p">)</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="k">except</span> <span class="ne">FileExistsError</span><span class="p">:</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"El directorio ya existe"</span><span class="p">)</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="k">except</span> <span class="ne">PermissionError</span><span class="p">:</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"No tiene permisos"</span><span class="p">)</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Se ha producido otro error:"</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Las excepciones específicas deben ir primero</p>
+<p>Los casos específicos deben aparecer antes que <code>Exception</code>, dejando el caso genérico al final.</p>
+</div>
+<p>Usar sólo una excepción genérica puede ocultar información útil. Es preferible capturar excepciones concretas cuando sabemos cuáles pueden ocurrir y utilizar <code>Exception</code> solo como último caso cuando tenga sentido.</p>
+<h2 id="8-ejemplos-excepciones">8. Ejemplos excepciones</h2>
+<h3 id="81-input-y-valueerror">8.1. <code>input()</code> y <code>ValueError</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">try</span><span class="p">:</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    <span class="n">edad</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Edad: "</span><span class="p">))</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Edad:"</span><span class="p">,</span> <span class="n">edad</span><span class="p">)</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Debe introducir un número entero"</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Si el usuario escribe un texto que no se puede convertir con <code>int()</code>, se produce <code>ValueError</code>.</p>
+<h3 id="82-division-por-cero">8.2. división por cero</h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">try</span><span class="p">:</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>    <span class="n">a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Dividendo: "</span><span class="p">))</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    <span class="n">b</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Divisor: "</span><span class="p">))</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    <span class="n">resultado</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Resultado:"</span><span class="p">,</span> <span class="n">resultado</span><span class="p">)</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Debe introducir números enteros"</span><span class="p">)</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"No se puede dividir entre cero"</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Aquí pueden ocurrir dos problemas distintos:</p>
+<ul>
+<li>el usuario introduce algo que no es un entero;</li>
+<li>el divisor es <code>0</code>.</li>
+</ul>
+<h2 id="9-anexo-i-else-y-finally">9. Anexo I: <code>else</code> y <code>finally</code></h2>
+<h3 id="91-else">9.1. else</h3>
+<p>Se puede añadir un bloque <code>else</code> a <code>try</code> qeu se ejecuta <strong>solo si no se produce ninguna excepción</strong>.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">try</span><span class="p">:</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>    <span class="n">numero</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Número: "</span><span class="p">))</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Valor incorrecto"</span><span class="p">)</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="k">else</span><span class="p">:</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Número correcto:"</span><span class="p">,</span> <span class="n">numero</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="92-finally">9.2. <code>finally</code></h3>
+<p>El bloque <code>finally</code> se ejecuta <strong>siempre</strong>, tanto si se produce una excepción como si no.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">try</span><span class="p">:</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>    <span class="n">numero</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Número: "</span><span class="p">))</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Número:"</span><span class="p">,</span> <span class="n">numero</span><span class="p">)</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Valor incorrecto"</span><span class="p">)</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="k">finally</span><span class="p">:</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Fin del intento"</span><span class="p">)</span>
+</span></code></pre></div>
+<p><code>finally</code> es útil para tareas de limpieza que deben ejecutarse siempre.</p>
+<h3 id="93-estructura-completa">9.3. Estructura completa</h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">try</span><span class="p">:</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    <span class="o">...</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="k">except</span> <span class="n">TipoError</span><span class="p">:</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    <span class="o">...</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="k">else</span><span class="p">:</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>    <span class="o">...</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="k">finally</span><span class="p">:</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>    <span class="o">...</span>
+</span></code></pre></div>
+<p>El significado es:</p>
+<ul>
+<li><code>try</code>: código que puede generar una excepción;</li>
+<li><code>except</code>: qué hacer si ocurre;</li>
+<li><code>else</code>: qué hacer si todo ha ido bien;</li>
+<li><code>finally</code>: qué hacer siempre.</li>
+</ul>
+<p>No es necesario utilizar todos los bloques.</p>
+<h2 id="10-ejemplo-completo-con-directorios">10. Ejemplo completo con directorios</h2>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="n">ruta</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Directorio a crear: "</span><span class="p">)</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="k">try</span><span class="p">:</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>    <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">ruta</span><span class="p">)</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="k">except</span> <span class="ne">FileExistsError</span><span class="p">:</span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"El directorio ya existe"</span><span class="p">)</span>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="k">except</span> <span class="ne">PermissionError</span><span class="p">:</span>
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"No tiene permisos para crear el directorio"</span><span class="p">)</span>
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a><span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Algún directorio intermedio no existe"</span><span class="p">)</span>
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>
+</span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a><span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Se ha producido un error no previsto:"</span><span class="p">)</span>
+</span><span id="__span-14-19"><a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+</span><span id="__span-14-20"><a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a>
+</span><span id="__span-14-21"><a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a><span class="k">else</span><span class="p">:</span>
+</span><span id="__span-14-22"><a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Directorio creado correctamente"</span><span class="p">)</span>
+</span><span id="__span-14-23"><a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a>
+</span><span id="__span-14-24"><a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a><span class="k">finally</span><span class="p">:</span>
+</span><span id="__span-14-25"><a id="__codelineno-14-25" name="__codelineno-14-25" href="#__codelineno-14-25"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Fin del intento de creación"</span><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="11-anexo-ii-excepciones-habituales-en-python">11. Anexo II: Excepciones habituales en Python</h2>
+<table>
+<thead>
+<tr>
+<th>Excepción</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ValueError</code></td>
+<td><code>int("hola")</code></td>
+</tr>
+<tr>
+<td><code>ZeroDivisionError</code></td>
+<td><code>10 / 0</code></td>
+</tr>
+<tr>
+<td><code>IndexError</code></td>
+<td>acceder fuera de una lista</td>
+</tr>
+<tr>
+<td><code>KeyError</code></td>
+<td>usar una clave inexistente</td>
+</tr>
+<tr>
+<td><code>FileNotFoundError</code></td>
+<td>abrir un fichero inexistente</td>
+</tr>
+<tr>
+<td><code>FileExistsError</code></td>
+<td>crear un directorio que ya existe</td>
+</tr>
+<tr>
+<td><code>PermissionError</code></td>
+<td>acceder sin permisos</td>
+</tr>
+</tbody>
+</table>
+<h3 id="111-indexerror-con-listas">11.1. <code>IndexError</code> con listas</h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">puertos</span> <span class="o">=</span> <span class="p">[</span><span class="mi">22</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">443</span><span class="p">]</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="k">try</span><span class="p">:</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>    <span class="n">posicion</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Posición: "</span><span class="p">))</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">puertos</span><span class="p">[</span><span class="n">posicion</span><span class="p">])</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Debe introducir un número"</span><span class="p">)</span>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"La posición no existe"</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="112-keyerror-con-diccionarios">11.2. <code>KeyError</code> con diccionarios</h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">servidor</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>    <span class="s2">"nombre"</span><span class="p">:</span> <span class="s2">"web01"</span><span class="p">,</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>    <span class="s2">"ip"</span><span class="p">:</span> <span class="s2">"192.168.1.20"</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="p">}</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="k">try</span><span class="p">:</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">servidor</span><span class="p">[</span><span class="s2">"puerto"</span><span class="p">])</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"La clave no existe"</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Para una consulta sencilla también podemos utilizar:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">servidor</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"puerto"</span><span class="p">)</span>
+</span></code></pre></div>
+<p>o comprobar previamente:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="k">if</span> <span class="s2">"puerto"</span> <span class="ow">in</span> <span class="n">servidor</span><span class="p">:</span>
+</span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">No todo debe resolverse con <code>try</code></p>
+<p>A veces existe una forma más sencilla de evitar el problema.</p>
+</div>
+<h2 id="12-anexo-iii-recomendaciones">12. Anexo III: Recomendaciones</h2>
+<h3 id="121-evitar-bloques-try-demasiado-grandes">12.1. Evitar bloques <code>try</code> demasiado grandes</h3>
+<p>Es preferible limitar el <code>try</code> al código que realmente puede generar la excepción que queremos controlar.</p>
+<p>Por ejemplo:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="k">try</span><span class="p">:</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>    <span class="n">edad</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Edad: "</span><span class="p">))</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Edad incorrecta"</span><span class="p">)</span>
+</span></code></pre></div>
+<p>resulta más claro que incluir muchas operaciones no relacionadas dentro del mismo <code>try</code>.</p>
+<h3 id="122-evitar-except-sin-indicar-excepcion">12.2. Evitar <code>except:</code> sin indicar excepción</h3>
+<p>Python permite:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="k">except</span><span class="p">:</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Error"</span><span class="p">)</span>
+</span></code></pre></div>
+<p>pero normalmente conviene evitar esta forma. Es preferible:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+</span></code></pre></div>
+<p>o si necesitamos un caso genérico:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span></code></pre></div>
 
 
 
@@ -1408,13 +2351,13 @@
         
         
           
-          <a href="../07_intro_python_linter/" class="md-footer__link md-footer__link--next" aria-label="Next: Linters">
+          <a href="../ejercicios/06_ejercicios_funciones_I/" class="md-footer__link md-footer__link--next" aria-label="Next: E06">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Linters
+                E06
               </div>
             </div>
             <div class="md-footer__button md-icon">
