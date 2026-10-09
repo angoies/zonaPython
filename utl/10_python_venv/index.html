@@ -1,0 +1,2176 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../Bl.01/src.zip">
+      
+      
+        <link rel="next" href="../intro_python_cli/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Entornos Virtuales - Zona Python</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#python-y-venv" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Zona Python" class="md-header__button md-logo" aria-label="Zona Python" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Zona Python
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Entornos Virtuales
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Zona Python" class="md-nav__button md-logo" aria-label="Zona Python" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Zona Python
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bl. 01
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Bl. 01
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bl.01/01_intro_python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducción y tipos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Estructuras control
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Estructuras control
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bl.01/02_intro_python_estructuras_selectivas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Selectivas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bl.01/02_intro_python_estructuras_bucles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bucles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Estructuras Datos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Estructuras Datos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bl.01/03_intro_python_datos_listas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Listas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bl.01/03_intro_python_datos_dict/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diccionarios
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ejercicios I
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ejercicios I
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bl.01/ejercicios/01_ejercicios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E01
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bl.01/ejercicios/02_ejercicios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E02
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bl.01/ejercicios/03_ejercicios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E03
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bl.01/ejercicios/04_ejercicios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E04
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bl.01/ejercicios/05_ejercicios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E05
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bl.01/ejercicios/ejercicios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Varios
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Módulos/funciones
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Módulos/funciones
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bl.01/04_intro_python_funciones_I/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Módulos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bl.01/05_intro_python_funciones_II/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Funciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bl.01/06_intro_python_excepciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Excepciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ejercicios II
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ejercicios II
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bl.01/ejercicios/06_ejercicios_funciones_I/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E06
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bl.01/ejercicios/07_ejercicios_funciones_II/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E07
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bl.01/ejercicios/08_ejercicios_excepciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E08
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bl.01/07_intro_python_linter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bl.01/08_intro_python_testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bl.01/09_intro_python_doc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bl.01/10_intro_python_debug/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Depuración
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bl.01/src.zip" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fuentes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Utiles
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Utiles
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entornos Virtuales
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entornos Virtuales
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-necesidad-de-entornos-virtuales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Necesidad de entornos virtuales
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-paso-1-crear-el-entorno-virtual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Paso 1: crear el entorno virtual
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-paso-2-activar-el-entorno-virtual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Paso 2: activar el entorno virtual
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-paso-3-instalar-un-modulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Paso 3: Instalar un módulo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-paso-4-salir-del-entorno" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Paso 4: Salir del entorno
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-uso-de-fichero-de-requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Uso de fichero de requisitos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-borrar-el-entorno-virtual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Borrar el entorno virtual
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-ejemplos-de-uso-de-entornos-virtuales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Ejemplos de uso de entornos virtuales
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Ejemplos de uso de entornos virtuales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-fastapi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1. FastAPI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-modulo-psutil" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2. módulo psutil
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-el-modulo-requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3. El módulo requests
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-jupyter-notebook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4. Jupyter Notebook
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-enlaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Enlaces
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro_python_cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Argumentos en CLI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pyInstaller/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PyInstaller
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pip_y_pipx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pip/pipx
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11_python_logging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Logging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-necesidad-de-entornos-virtuales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Necesidad de entornos virtuales
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-paso-1-crear-el-entorno-virtual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Paso 1: crear el entorno virtual
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-paso-2-activar-el-entorno-virtual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Paso 2: activar el entorno virtual
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-paso-3-instalar-un-modulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Paso 3: Instalar un módulo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-paso-4-salir-del-entorno" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Paso 4: Salir del entorno
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-uso-de-fichero-de-requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Uso de fichero de requisitos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-borrar-el-entorno-virtual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Borrar el entorno virtual
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-ejemplos-de-uso-de-entornos-virtuales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Ejemplos de uso de entornos virtuales
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Ejemplos de uso de entornos virtuales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-fastapi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1. FastAPI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-modulo-psutil" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2. módulo psutil
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-el-modulo-requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3. El módulo requests
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-jupyter-notebook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4. Jupyter Notebook
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-enlaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Enlaces
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Inicio
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="./" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Utiles
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="python-y-venv">Python y venv</h1>
+<h2 id="1-necesidad-de-entornos-virtuales">1. Necesidad de entornos virtuales</h2>
+<p>Puede consultar detalles sobre entornos virtuales en este enlace: <a href="https://realpython.com/python-virtual-environments-a-primer/">A Guide to Python's Virtual Environments</a></p>
+<p>Pero básicamente se pretende:</p>
+<ul>
+<li>Poder trabajar con proyectos con distintas versiones de lenguaje de programación.</li>
+<li>Poder tener en cada proyecto distintas versiones de los módulos que se importen.</li>
+<li>Poder reproducir el entorno de trabajo en otro equipo a partir de un fichero de texto con los requisitos.</li>
+<li>No añadir a la configuración global del equipo módulos que son específicos de cada proyecto.</li>
+</ul>
+<h2 id="2-paso-1-crear-el-entorno-virtual">2. Paso 1: crear el entorno virtual</h2>
+<p>Cree una carpeta para el proyecto y sitúese en ella:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>clases@d12:~$<span class="w"> </span>mkdir<span class="w"> </span>proyecto
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>clases@d12:~$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>proyecto/
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>clases@d12:~/proyecto$
+</span></code></pre></div>
+<p>El comando para crear un entorno virtual en Python es</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>python3 -m venv &lt;nombre_directorio_entornovirtual&gt;`
+</span></code></pre></div>
+<p>Es habitual darle al directorio donde se almacena toda la información del entorno virtual siempre el mismo nombre, por ejemplo en este caso <code>venv</code> (o <code>.venv</code>).</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>clases@d12:~/proyecto$<span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>clases@d12:~/proyecto$<span class="w"> </span>ls<span class="w"> </span>-l
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>total<span class="w"> </span><span class="m">4</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>drwxr-xr-x<span class="w"> </span><span class="m">5</span><span class="w"> </span>clases<span class="w"> </span>clases<span class="w"> </span><span class="m">4096</span><span class="w"> </span>dic<span class="w">  </span><span class="m">1</span><span class="w"> </span><span class="m">20</span>:12<span class="w"> </span>venv
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>clases@d12:~/proyecto$
+</span></code></pre></div>
+<div class="admonition warning error al crear el entrono">
+<p class="admonition-title">Warning</p>
+<p>Es posible que al intentar crear el entorno virtual le solicite instalar el módulo <code>venv</code> si no estuviese instalado.</p>
+<blockquote>
+<p>On Debian/Ubuntu systems, you need to install the <code>python3-venv</code> package using the following command:
+<code>sudo apt install python3.11-venv</code></p>
+</blockquote>
+<p>Para ello:</p>
+<p>```bash
+clases@d12:~/proyecto$ sudo apt install python3.11-venv
+[sudo] contraseña para clases: 
+Leyendo lista de paquetes... Hecho
+Creando árbol de dependencias... Hecho
+Configurando python3.11-venv (3.11.2-6)
+clases@d12:~/proyecto$</p>
+</div>
+<p>```</p>
+<h2 id="3-paso-2-activar-el-entorno-virtual">3. Paso 2: activar el entorno virtual</h2>
+<p>Crear el entorno no implica que se esté usando. Para activarlo debe ejecutar este comando:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>clases@d12:~/proyecto$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>venv/bin/activate
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="o">(</span>venv<span class="o">)</span><span class="w"> </span>clases@d12:~/proyecto$
+</span></code></pre></div>
+<div class="admonition warning windows y venv">
+<p class="admonition-title">Warning</p>
+<p>Tenga en cuenta que la activación desde un entorno Windows es diferente:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>c:\proyecto\&gt;.venv\Scripts\activate
+</span></code></pre></div></p>
+<p><em>Fuente:</em> <a href="https://dev.to/e_farach/setting-up-a-python-virtual-environment-on-windows-for-absolute-beginners-il6">Setting up a Python virtual environment on Windows for absolute beginners</a></p>
+</div>
+<h2 id="3-paso-3-instalar-un-modulo">3. Paso 3: Instalar un módulo</h2>
+<p>En el siguiente ejemplo (que resuelve un sistema de ecuaciones) se usa el módulo <code>numpy</code> que <strong>no está instalado por defecto</strong>.</p>
+<p>El contenido del fichero <code>main.py</code>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># solve(a, b) : Devuelve la solución del sistema de ecuaciones lineales</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># con los coeficientes de la matriz a y los términos independientes </span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="c1"># de la matriz b.</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="c1"># Sistema de dos ecuaciones y dos incógnitas</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="c1"># x + 2y = 1</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="c1"># 3x + 5y = 2 </span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]])</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="c1"># Resultado [-1. 1.]</span>
+</span></code></pre></div>
+<p>Recién creado el entorno no debe haber ningún módulo instalado por el usuario. El comando <code>pip freeze</code> no muestra nada a la salida:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="o">(</span>venv<span class="o">)</span><span class="w"> </span>clases@d12:~/proyecto$<span class="w"> </span>pip<span class="w"> </span>freeze
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="o">(</span>venv<span class="o">)</span><span class="w"> </span>clases@d12:~/proyecto$<span class="w"> </span>
+</span></code></pre></div>
+<p>Si intenta ejecutat el script <code>main.py</code>  da el error  <code>ModuleNotFoundError</code> al no encontrar el módulo <code>numpy</code>:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="o">(</span>venv<span class="o">)</span><span class="w"> </span>clases@d12:~/proyecto$<span class="w"> </span>python3<span class="w"> </span>main.py<span class="w"> </span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>Traceback<span class="w"> </span><span class="o">(</span>most<span class="w"> </span>recent<span class="w"> </span>call<span class="w"> </span>last<span class="o">)</span>:
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span>File<span class="w"> </span><span class="s2">"/home/usuario/CIBER-PPS/bloque_03_programacion_segura/docs/tema_01_venv/src/numpy/main.py"</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">14</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>&lt;module&gt;
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span>import<span class="w"> </span>numpy<span class="w"> </span>as<span class="w"> </span>np
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>ModuleNotFoundError:<span class="w"> </span>No<span class="w"> </span>module<span class="w"> </span>named<span class="w"> </span><span class="s1">'numpy'</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="o">(</span>venv<span class="o">)</span><span class="w"> </span>clases@d12:~/proyecto$<span class="w"> </span>
+</span></code></pre></div>
+<p>Instale el módulo <code>numpy</code> en el entorno virtual utilizando la herramienta  <code>pip</code>:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="o">(</span>venv<span class="o">)</span><span class="w"> </span>clases@d12:~/proyecto$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>numpy
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>Collecting<span class="w"> </span>numpy
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>...
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>Successfully<span class="w"> </span>installed<span class="w"> </span>numpy-2.2.0
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="o">(</span>venv<span class="o">)</span><span class="w"> </span>clases@d12:~/proyecto$<span class="w"> </span>pip<span class="w"> </span>freeze
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="nv">numpy</span><span class="o">==</span><span class="m">2</span>.2.0
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="o">(</span>venv<span class="o">)</span><span class="w"> </span>clases@d12:~/proyecto$<span class="w"> </span>
+</span></code></pre></div>
+<p>Ahora puede probar de nuevo el ejemplo. El resultado será similar a:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="o">(</span>venv<span class="o">)</span><span class="w"> </span>clases@d12:~/proyecto$<span class="w"> </span>python3<span class="w"> </span>main.py
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="o">[</span>-1.<span class="w"> </span><span class="m">1</span>.<span class="o">]</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="o">(</span>venv<span class="o">)</span><span class="w"> </span>clases@d12:~/proyecto$
+</span></code></pre></div>
+<p>Compruebe ahora la salida del comando <code>pip freeze</code>. Observará que se ha instalado en el entorno virtual <code>numpy</code> (y todos aquellos otrso módulos que necesite).</p>
+<h2 id="4-paso-4-salir-del-entorno">4. Paso 4: Salir del entorno</h2>
+<p>Para salir del entorno se usa el comando <code>deactivate</code>:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="o">(</span>venv<span class="o">)</span><span class="w"> </span>clases@d12:~/proyecto$<span class="w"> </span>deactivate
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>clases@d12:~/proyecto$
+</span></code></pre></div>
+<p>Puede intentar ejecutar el script anterior uan vez desactivado  y observar que no funciona:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>clases@d12:~/proyecto$<span class="w"> </span>python3<span class="w"> </span>main.py
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>Traceback<span class="w"> </span><span class="o">(</span>most<span class="w"> </span>recent<span class="w"> </span>call<span class="w"> </span>last<span class="o">)</span>:
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">  </span>File<span class="w"> </span><span class="s2">"/home/usuario/CIBER-PPS/bloque_03_programacion_segura/docs/tema_01_venv/src/numpy/main.py"</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">1</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>&lt;module&gt;
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">    </span>import<span class="w"> </span>numpy<span class="w"> </span>as<span class="w"> </span>np
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>ModuleNotFoundError:<span class="w"> </span>No<span class="w"> </span>module<span class="w"> </span>named<span class="w"> </span><span class="s1">'numpy'</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>clases@d12:~/proyecto$
+</span></code></pre></div>
+<p>Si activa de nuevo el entorno se mantienen los módulos instalados previamente y puede ejecutar de nuevo el script, etc.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>clases@d12:~/proyecto$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>venv/bin/activate
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="o">(</span>venv<span class="o">)</span><span class="w"> </span>clases@d12:~/proyecto$<span class="w"> </span>python3<span class="w"> </span>main.py
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="o">[</span>-1.<span class="w"> </span><span class="m">1</span>.<span class="o">]</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="o">(</span>venv<span class="o">)</span><span class="w"> </span>clases@d12:~/proyecto$
+</span></code></pre></div>
+<h2 id="5-uso-de-fichero-de-requisitos">5. Uso de fichero de requisitos</h2>
+<p>Si quiere almacenar los requisitos del proyecto puede generar un fichero con el listado de los módulos (y sus versiones) usando <code>pip freeze</code> y redirigir la salida a un fichero:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="o">(</span>venv<span class="o">)</span><span class="w"> </span>clases@d12:~/proyecto$<span class="w"> </span>pip<span class="w"> </span>freeze<span class="w"> </span>&gt;<span class="w"> </span>requirements.txt
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="o">(</span>venv<span class="o">)</span><span class="w"> </span>clases@d12:~/proyecto$
+</span></code></pre></div>
+<p>Si quiere trabajar en otro equipo y recrear los mismos módulos basta, una vez creado y activado el nuevo entorno, ejecutar la instalación con <code>pip</code> de esos módulos a partir del fichero <code>requirements.txt</code> con la opción <code>-r</code>: </p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>pip3 install -r requirements.txt
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>clases@d12:~/proyecto-sedeA$<span class="w"> </span>ls<span class="w"> </span>-a
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>requirements.txt
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>clases@d12:~/proyecto-sedeA$<span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>clases@d12:~/proyecto-sedeA$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>venv/bin/activate
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="o">(</span>venv<span class="o">)</span><span class="w"> </span>clases@d12:~/proyecto-sedeA$<span class="w"> </span>pip<span class="w"> </span>freeze
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="o">(</span>venv<span class="o">)</span><span class="w"> </span>clases@d12:~/proyecto-sedeA$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>Collecting<span class="w"> </span><span class="nv">numpy</span><span class="o">==</span><span class="m">2</span>.2.0
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">  </span>Using<span class="w"> </span>cached<span class="w"> </span>numpy-2.2.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl<span class="w"> </span><span class="o">(</span><span class="m">16</span>.4<span class="w"> </span>MB<span class="o">)</span>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>Installing<span class="w"> </span>collected<span class="w"> </span>packages:<span class="w"> </span>numpy
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>Successfully<span class="w"> </span>installed<span class="w"> </span>numpy-2.2.0
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="o">(</span>venv<span class="o">)</span><span class="w"> </span>clases@d12:~/proyecto-sedeA$
+</span></code></pre></div>
+<h2 id="6-borrar-el-entorno-virtual">6. Borrar el entorno virtual</h2>
+<p>Si desea borrar el entorno virtual basta con borrar el directorio <code>venv</code> creado dentro del proyecto:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="o">(</span>venv<span class="o">)</span><span class="w"> </span>clases@d12:~/proyecto$<span class="w"> </span>deactivate
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>clases@d12:~/proyecto$<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>venv/
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>clases@d12:~/proyecto$
+</span></code></pre></div>
+<h2 id="7-ejemplos-de-uso-de-entornos-virtuales">7. Ejemplos de uso de entornos virtuales</h2>
+<div class="admonition note módulos ya instalados">
+<p class="admonition-title">Note</p>
+<p>Depende del sistema operativo, módulos previamente instalados, etc puede que algunos de los módulos de estos ejemplos no necesiten instalación. </p>
+</div>
+<h3 id="71-fastapi">7.1. FastAPI</h3>
+<p>Puede ser que en algún momento trabaje con el framework de Python FastAPI. En ese caso necesita el módulo <code>fastapi</code> y adicionalmente un servidor de aplicaciones como <code>uvicorn</code>. </p>
+<p>En este ejemplo sencillo el fichero <code>main.py</code> contiene:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fastapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">FastAPI</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">()</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">root</span><span class="p">():</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>    <span class="k">return</span> <span class="p">{</span><span class="s2">"message"</span><span class="p">:</span> <span class="s2">"Hello World"</span><span class="p">}</span>
+</span></code></pre></div>
+<p>El proceso es similar al presentado previamente: crear un entorno virtual, iniciarlo </p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>clases@d12:~$<span class="w"> </span>mkdir<span class="w"> </span>app
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>clases@d12:~$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>app
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>clases@d12:~/app$<span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>clases@d12:~/app$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>venv/bin/activate
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="o">(</span>venv<span class="o">)</span><span class="w"> </span>clases@d12:~/app$<span class="w"> </span>nano<span class="w"> </span>main.py
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="o">(</span>venv<span class="o">)</span><span class="w"> </span>clases@d12:~/app$<span class="w"> </span>
+</span></code></pre></div>
+<p>e instalar los módulos. En este caso lso módulos necesarios son <code>fastapi</code> y <code>uvicorn</code>:</p>
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="o">(</span>venv<span class="o">)</span><span class="w"> </span>clases@d12:~/app$<span class="w"> </span>pip<span class="w"> </span>freeze
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="o">(</span>venv<span class="o">)</span><span class="w"> </span>clases@d12:~/app$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>fastapi
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>Collecting<span class="w"> </span>fastapi
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>...
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>Successfully<span class="w"> </span>installed<span class="w"> </span>fastapi-0.104.1<span class="w"> </span>idna-3.6
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>...
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="o">(</span>venv<span class="o">)</span><span class="w"> </span>clases@d12:~/app$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>uvicorn
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>Collecting<span class="w"> </span>uvicorn
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>...
+</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>Installing<span class="w"> </span>collected<span class="w"> </span>packages:<span class="w"> </span>h11,<span class="w"> </span>click,<span class="w"> </span>uvicorn
+</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>Successfully<span class="w"> </span>installed<span class="w"> </span>click-8.1.7<span class="w"> </span>h11-0.14.0<span class="w"> </span>uvicorn-0.24.0.post1
+</span><span id="__span-19-12"><a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a><span class="o">(</span>venv<span class="o">)</span><span class="w"> </span>clases@d12:~/app$
+</span></code></pre></div>
+Ya puede lanzar el servidor <code>uvicorn</code> con la aplicación. Observe la forma de invocarla:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="o">(</span>venv<span class="o">)</span><span class="w"> </span>clases@d12:~/app$<span class="w"> </span>uvicorn<span class="w"> </span>main:app<span class="w"> </span>--reload
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>INFO:<span class="w">     </span>Will<span class="w"> </span>watch<span class="w"> </span><span class="k">for</span><span class="w"> </span>changes<span class="w"> </span><span class="k">in</span><span class="w"> </span>these<span class="w"> </span>directories:<span class="w"> </span><span class="o">[</span><span class="s1">'/home/clases/app'</span><span class="o">]</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>INFO:<span class="w">     </span>Uvicorn<span class="w"> </span>running<span class="w"> </span>on<span class="w"> </span>http://127.0.0.1:8000<span class="w"> </span><span class="o">(</span>Press<span class="w"> </span>CTRL+C<span class="w"> </span>to<span class="w"> </span>quit<span class="o">)</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>INFO:<span class="w">     </span>Started<span class="w"> </span>reloader<span class="w"> </span>process<span class="w"> </span><span class="o">[</span><span class="m">3380</span><span class="o">]</span><span class="w"> </span>using<span class="w"> </span>StatReload
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>INFO:<span class="w">     </span>Started<span class="w"> </span>server<span class="w"> </span>process<span class="w"> </span><span class="o">[</span><span class="m">3382</span><span class="o">]</span>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>INFO:<span class="w">     </span>Waiting<span class="w"> </span><span class="k">for</span><span class="w"> </span>application<span class="w"> </span>startup.
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>INFO:<span class="w">     </span>Application<span class="w"> </span>startup<span class="w"> </span>complete.
+</span></code></pre></div>
+<p>Y ya puede acceder a la app en la URL <code>http://127.0.0.1:8000</code> (o a <code>http://127.0.0.1:8000/docs</code> para ver la documentación de la API creada).</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>clases@d12:~/app$<span class="w"> </span>curl<span class="w"> </span>localhost:8000
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="o">{</span><span class="s2">"message"</span>:<span class="s2">"Hello World"</span><span class="o">}</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>clases@d12:~/app$<span class="w"> </span>firefox<span class="w"> </span>localhost:8000<span class="w"> </span><span class="p">&amp;</span>
+</span></code></pre></div>
+<h3 id="72-modulo-psutil">7.2. módulo psutil</h3>
+<p>Este es un ejemplo de uso del módulo  <code>psutil</code>  que permite obtener información el uso de los recursos del sistema.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">psutil</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="nb">print</span> <span class="p">(</span> <span class="s2">" --- Monitorizando el Sistema Local ---"</span> <span class="p">)</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="c1"># 1. Uso de CPU</span>
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="c1"># interval =1 significa que mide durante 1 segundo</span>
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="n">cpu_uso</span> <span class="o">=</span> <span class="n">psutil</span><span class="o">.</span><span class="n">cpu_percent</span><span class="p">(</span><span class="n">interval</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>
+</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">" Uso actual de CPU : </span><span class="si">{</span><span class="w"> </span><span class="n">cpu_uso</span><span class="w"> </span><span class="si">}</span><span class="s2"> %"</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Y el resultado esperado tras instalar el módulo:</p>
+<p>$ python3 cpu.py 
+ --- Monitorizando el Sistema Local ---
+ Uso actual de CPU : 6.6 %
+$</p>
+<h3 id="73-el-modulo-requests">7.3. El módulo requests</h3>
+<p>Veamos un ejemplo sencillo del uso de la biblioteca <code>requests</code> que permite enviar solicitudes HTTP (como GET, POST, PUT, DELETE) a servidores web de forma sencilla, legible y rápida.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="n">URL</span> <span class="o">=</span> <span class="s2">"https://www.uca.es"</span> <span class="c1"># "https://www.uca.es/noexiste"</span>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">URL</span><span class="p">)</span>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">headers</span><span class="p">)</span>
+</span><span id="__span-23-8"><a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="c1">#print(res.text)</span>
+</span></code></pre></div>
+<p>El resultado será similar a:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="o">(</span>venv<span class="o">)</span><span class="w"> </span>clases@d12:~/proyecto$<span class="w"> </span>python<span class="w"> </span>prueba_request.py
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>&lt;Response<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="o">]</span>&gt;
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="o">{</span><span class="s1">'Server'</span>:<span class="w"> </span><span class="s1">'nginx'</span>,<span class="w"> </span><span class="s1">'Date'</span>:<span class="w"> </span><span class="s1">'Fri, 01 Dec 2023 19:47:02 GMT'</span>,<span class="w"> </span><span class="s1">'Content-Type'</span>:<span class="w"> </span><span class="s1">'text/html; charset=UTF-8'</span>,<span class="w"> </span><span class="s1">'Content-Length'</span>:<span class="w"> </span><span class="s1">'20584'</span>,<span class="w"> </span><span class="s1">'Connection'</span>:<span class="w"> </span><span class="s1">'keep-alive'</span>,<span class="w"> </span><span class="s1">'X-Frame-Options'</span>:<span class="w"> </span><span class="s1">'SAMEORIGIN'</span>,<span class="w"> </span><span class="s1">'Link'</span>:<span class="w"> </span><span class="s1">'&lt;https://www.uca.es/wp-json/&gt;; rel="https://api.w.org/"'</span>,<span class="w"> </span><span class="s1">'cache-control'</span>:<span class="w"> </span><span class="s1">'max-age=0, must-revalidate'</span>,<span class="w"> </span><span class="s1">'Content-Encoding'</span>:<span class="w"> </span><span class="s1">'gzip'</span>,<span class="w"> </span><span class="s1">'Vary'</span>:<span class="w"> </span><span class="s1">'Accept-Encoding'</span>,<span class="w"> </span><span class="s1">'X-Forwarded-Proto'</span>:<span class="w"> </span><span class="s1">'https'</span>,<span class="w"> </span><span class="s1">'age'</span>:<span class="w"> </span><span class="s1">'0'</span>,<span class="w"> </span><span class="s1">'Accept-Ranges'</span>:<span class="w"> </span><span class="s1">'bytes'</span><span class="o">}</span>
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="o">(</span>venv<span class="o">)</span><span class="w"> </span>clases@d12:~/proyecto$
+</span></code></pre></div>
+<h3 id="74-jupyter-notebook">7.4. Jupyter Notebook</h3>
+<div class="admonition note un módulo con muchas dependencias">
+<p class="admonition-title">Note</p>
+<p>Se incluye este ejemplo para que observe que la instalación puede generar mas de 90 dependencias y ocupar entre 250MB y varios GB en función de la instalación. </p>
+<p>En estos casos se ve la importancia de no compartir el entorno virtual y ern su lugar compartir el fichero de requisitos.</p>
+</div>
+<p>Jupyter Notebook no es un "módulo" tradicional de Python en el sentido de una simple librería de funciones, sino un entorno web interactivo de desarrollo (IDE) de código abierto. Permite crear y compartir documentos web (archivos .ipynb) que combinan código ejecutable, ecuaciones matemáticas, visualizaciones y texto explicativo en un solo lugar. </p>
+<p>El proceso de trabajo es similar: crear un nuevo directorio, un entorno virtual, se activa y se instala el módulo <code>notebook</code>. Tiene más información sobre esta herramienta en <a href="https://jupyter.org/">https://jupyter.org/</a>.</p>
+<p>En este ejemplo se mostrará Jupyter Notebook. También puede probar JupyterLab.</p>
+<p>Este ejemplo muestra que un módulo puede tener dependencias de otros y en este caso instala todos los necesarios (en este caso alrededor de 90):</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>clases@d12:~$<span class="w"> </span>mkdir<span class="w"> </span>notebook<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>notebook
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>clases@d12:~/notebook$<span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>clases@d12:~/notebook$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>venv/bin/activate
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="o">(</span>venv<span class="o">)</span><span class="w"> </span>clases@d12:~/notebook$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>notebook
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>Collecting<span class="w"> </span>notebook
+</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>...
+</span><span id="__span-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a>clases@d12:~/notebook$<span class="w"> </span>pip<span class="w"> </span>freeze<span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l
+</span><span id="__span-25-8"><a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="m">90</span>
+</span><span id="__span-25-9"><a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a><span class="o">(</span>venv<span class="o">)</span><span class="w"> </span>clases@d12:~/notebook$
+</span></code></pre></div>
+<p>Una vez instalado, lanzar la aplicación con el comando <code>jupyter notebook</code>:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="o">(</span>venv<span class="o">)</span><span class="w"> </span>clases@d12:~/notebook$<span class="w"> </span>jupyter<span class="w"> </span>notebook
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="o">[</span>I<span class="w"> </span><span class="m">2023</span>-12-01<span class="w"> </span><span class="m">22</span>:00:04.835<span class="w"> </span>ServerApp<span class="o">]</span><span class="w"> </span>Package<span class="w"> </span>notebook<span class="w"> </span>took<span class="w"> </span><span class="m">0</span>.0000s<span class="w"> </span>to<span class="w"> </span>import
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="o">[</span>I<span class="w"> </span><span class="m">2023</span>-12-01<span class="w"> </span><span class="m">22</span>:00:04.842<span class="w"> </span>ServerApp<span class="o">]</span><span class="w"> </span>Package<span class="w"> </span>jupyter_lsp<span class="w"> </span>took<span class="w"> </span><span class="m">0</span>.0066s<span class="w"> </span>to<span class="w"> </span>import
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>....
+</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="o">[</span>I<span class="w"> </span><span class="m">2023</span>-12-01<span class="w"> </span><span class="m">22</span>:00:05.071<span class="w"> </span>ServerApp<span class="o">]</span><span class="w"> </span>Serving<span class="w"> </span>notebooks<span class="w"> </span>from<span class="w"> </span><span class="nb">local</span><span class="w"> </span>directory:<span class="w"> </span>/home/clases/notebook
+</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="o">[</span>I<span class="w"> </span><span class="m">2023</span>-12-01<span class="w"> </span><span class="m">22</span>:00:05.071<span class="w"> </span>ServerApp<span class="o">]</span><span class="w"> </span>Jupyter<span class="w"> </span>Server<span class="w"> </span><span class="m">2</span>.11.1<span class="w"> </span>is<span class="w"> </span>running<span class="w"> </span>at:
+</span><span id="__span-26-7"><a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a><span class="o">[</span>I<span class="w"> </span><span class="m">2023</span>-12-01<span class="w"> </span><span class="m">22</span>:00:05.071<span class="w"> </span>ServerApp<span class="o">]</span><span class="w"> </span>http://localhost:8888/tree?token<span class="o">=</span>208c5ce93f58f946e491a0c25f0ded05eaae1180f805863e
+</span><span id="__span-26-8"><a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a><span class="o">[</span>I<span class="w"> </span><span class="m">2023</span>-12-01<span class="w"> </span><span class="m">22</span>:00:05.071<span class="w"> </span>ServerApp<span class="o">]</span><span class="w"> </span>http://127.0.0.1:8888/tree?token<span class="o">=</span>208c5ce93f58f946e491a0c25f0ded05eaae1180f805863e
+</span><span id="__span-26-9"><a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a><span class="o">[</span>I<span class="w"> </span><span class="m">2023</span>-12-01<span class="w"> </span><span class="m">22</span>:00:05.071<span class="w"> </span>ServerApp<span class="o">]</span><span class="w"> </span>Use<span class="w"> </span>Control-C<span class="w"> </span>to<span class="w"> </span>stop<span class="w"> </span>this<span class="w"> </span>server<span class="w"> </span>and<span class="w"> </span>shut<span class="w"> </span>down<span class="w"> </span>all<span class="w"> </span>kernels<span class="w"> </span><span class="o">(</span>twice<span class="w"> </span>to<span class="w"> </span>skip<span class="w"> </span>confirmation<span class="o">)</span>.
+</span><span id="__span-26-10"><a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a><span class="o">[</span>C<span class="w"> </span><span class="m">2023</span>-12-01<span class="w"> </span><span class="m">22</span>:00:05.084<span class="w"> </span>ServerApp<span class="o">]</span><span class="w"> </span>
+</span><span id="__span-26-11"><a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a>
+</span><span id="__span-26-12"><a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a><span class="w"> </span>To<span class="w"> </span>access<span class="w"> </span>the<span class="w"> </span>server,<span class="w"> </span>open<span class="w"> </span>this<span class="w"> </span>file<span class="w"> </span><span class="k">in</span><span class="w"> </span>a<span class="w"> </span>browser:
+</span><span id="__span-26-13"><a id="__codelineno-26-13" name="__codelineno-26-13" href="#__codelineno-26-13"></a><span class="w"> </span>file:///home/clases/.local/share/jupyter/runtime/jpserver-2652-open.html
+</span><span id="__span-26-14"><a id="__codelineno-26-14" name="__codelineno-26-14" href="#__codelineno-26-14"></a><span class="w"> </span>Or<span class="w"> </span>copy<span class="w"> </span>and<span class="w"> </span>paste<span class="w"> </span>one<span class="w"> </span>of<span class="w"> </span>these<span class="w"> </span>URLs:
+</span><span id="__span-26-15"><a id="__codelineno-26-15" name="__codelineno-26-15" href="#__codelineno-26-15"></a><span class="w"> </span>http://localhost:8888/tree?token<span class="o">=</span>208c5ce93f58f946e491a0c25f0ded05eaae1180f805863e
+</span><span id="__span-26-16"><a id="__codelineno-26-16" name="__codelineno-26-16" href="#__codelineno-26-16"></a><span class="w"> </span>http://127.0.0.1:8888/tree?token<span class="o">=</span>208c5ce93f58f946e491a0c25f0ded05eaae1180f805863e
+</span></code></pre></div>
+<p>Nos muestra los mensajes para poder acceder a Jupyter Notebook, aunque lo normal es que nos abra el navegador ya con esa URL. Y ya podemos crear un cuaderno y trabajar con ese entorno:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="c1"># Ejemplo notebook</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">"¡Hola Mundo!"</span><span class="p">)</span>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="err">¡</span><span class="n">Hola</span> <span class="n">Mundo</span><span class="err">!</span>
+</span></code></pre></div>
+<p>Para salir pulsar <code>Ctrl-C</code> en el terminal.</p>
+<h2 id="8-enlaces">8. Enlaces</h2>
+<ul>
+<li><a href="https://realpython.com/python-virtual-environments-a-primer/">A Guide to Python's Virtual Environments</a></li>
+<li>FastAPI: <a href="https://fastapi.tiangolo.com/">https://fastapi.tiangolo.com/</a></li>
+<li>Python requests. La librería para hacer peticiones http en Python: <a href="https://j2logo.com/python/python-requests-peticiones-http/">https://j2logo.com/python/python-requests-peticiones-http/</a></li>
+<li>Módulo psutil: <a href="https://psutil.readthedocs.io/stable/">Módulo psutil</a>](https://psutil.readthedocs.io/stable/)</li>
+<li>Uso de jupyter online: <a href="https://jupyter.org/try">https://jupyter.org/try</a></li>
+<li>Google Colab: <a href="https://colab.research.google.com/">https://colab.research.google.com/</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../Bl.01/src.zip" class="md-footer__link md-footer__link--prev" aria-label="Previous: Fuentes">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Fuentes
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../intro_python_cli/" class="md-footer__link md-footer__link--next" aria-label="Next: Argumentos en CLI">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Argumentos en CLI
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["search.highlight", "navigation.tracking", "navigation.tabs.sticky", "navigation.path", "navigation.footer", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

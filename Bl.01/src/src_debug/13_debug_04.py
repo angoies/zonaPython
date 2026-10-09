@@ -15,7 +15,6 @@ def generar_factura():
     precios = [10, 20, 30]
     return calcular_total(precios)
 
-
 resultado = generar_factura()
 
 print("Resultad0:", resultado)
