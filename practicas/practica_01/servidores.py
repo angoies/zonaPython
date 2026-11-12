@@ -49,5 +49,3 @@ LISTAUNO = [
         "servicios": {"ssh": "activo", "nginx": "activo"},
     }
 ]
-
-LISTAVACIA = []
